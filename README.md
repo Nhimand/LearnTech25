@@ -1,4 +1,4 @@
-# learnTech2025_group12
+# ProjectStart
 
 
 
@@ -15,14 +15,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin https://git.rwth-aachen.de/learntech-lufgi9/ss25/learntech/learntech2025_group12.git
+git remote add origin https://git.rwth-aachen.de/learntech-lufgi9/ss25/learntech/ProjectStart.git
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](https://git.rwth-aachen.de/learntech-lufgi9/ss25/learntech/learntech2025_group12/-/settings/integrations)
+- [ ] [Set up project integrations](https://git.rwth-aachen.de/learntech-lufgi9/ss25/learntech/ProjectStart/-/settings/integrations)
 
 ## Collaborate with your team
 
