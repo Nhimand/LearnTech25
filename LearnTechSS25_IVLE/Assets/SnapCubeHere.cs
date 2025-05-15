@@ -5,12 +5,15 @@ public class SnapCubeHere : MonoBehaviour
 {
     public GameObject puzzleCubeParent;
     private List<Transform> puzzleCubes = new List<Transform>();
-    private Vector3 ownPos = new Vector3();
+    private Vector3 ownPos;
+    private Quaternion ownRot;
     private Outline cubeOutline;
+    private bool isSet = false;
     void Start()
     {
-        cubeOutline = gameObject.GetComponent<Outline>();
-        ownPos = gameObject.transform.position;
+        cubeOutline = GetComponent<Outline>();
+        ownPos = transform.position;
+        ownRot = transform.rotation;
         foreach (Transform child in puzzleCubeParent.transform) 
         {
             puzzleCubes.Add(child);
@@ -26,20 +29,20 @@ public class SnapCubeHere : MonoBehaviour
         {
             Vector3 cubePos = puzzleCube.position;
             float distance = Vector3.Distance(ownPos, cubePos);
-            if (distance < 1f) 
+            if (distance < 0.5f) 
             {
                 cubeOutline.enabled = true;
                 CheckSelected checker = puzzleCube.GetComponent<CheckSelected>();
-                if (checker.isDeactivated)
+                if (checker.isDeactivated && !isSet)
                 {
-                    puzzleCube.position = ownPos;
+                    puzzleCube.SetPositionAndRotation(ownPos, ownRot);
+                    isSet = true;
                 }
-                else
+                else if (!checker.isDeactivated)
                 {
-                    
+                    isSet = false;                
                 }
             }
-
         }
 
         //if puzzle cube is in range do:
