@@ -1,0 +1,10 @@
+{
+    "name": {
+        "en-US": "deleted",
+        "de-DE": "löschte"
+    },
+    "description": {
+        "en-US": "An actor deleted something.",
+        "de-DE": "Ein Akteur löschte etwas."
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "name": {
+        "en-US": "collected",
+        "de-DE": "sammelte"
+    },
+    "description": {
+        "en-US": "An actor collected some item.",
+        "de-DE": "Ein Akteur sammelte einen Gegenstand ein."
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "name": {
+        "en-US": "ordered",
+        "de-DE": "ordnete"
+    },
+    "description": {
+        "en-US": "An actor brought some objects into order.",
+        "de-DE": "Ein Akteur ordnete ein Anzahl an Gegenständen."
+    }
+}

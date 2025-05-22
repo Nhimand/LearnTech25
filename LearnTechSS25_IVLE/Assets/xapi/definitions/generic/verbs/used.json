@@ -1,0 +1,14 @@
+{
+    "name": {
+        "en-US": "used",
+        "de-DE": "benutzte"
+    },
+    "description": {
+        "en-US": "An actor used some item.",
+        "de-DE": "Ein Akteur benutze einen Gegenstand."
+    },
+    "exactMatch": [
+        "https://registry.tincanapi.com/#uri/verb/161",
+        "https://activitystrea.ms/schema/1.0/use"
+    ]
+}

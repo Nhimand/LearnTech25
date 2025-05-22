@@ -1,0 +1,14 @@
+{
+    "name": {
+        "en-US": "found",
+        "de-DE": "fand"
+    },
+    "description": {
+        "en-US": "An actor found some item.",
+        "de-DE": "Ein Akteur fand einen Gegenstand."
+    },
+    "exactMatch": [
+        "https://registry.tincanapi.com/#uri/verb/110",
+        "https://activitystrea.ms/schema/1.0/find"
+    ]
+}

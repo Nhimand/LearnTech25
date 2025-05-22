@@ -1,0 +1,10 @@
+{
+    "name": {
+        "en-US": "triggered",
+        "de-DE": "löste aus"
+    },
+    "description": {
+        "en-US": "An actor triggered a event.",
+        "de-DE": "Ein Akteur löste ein Ereignis aus."
+    }
+}

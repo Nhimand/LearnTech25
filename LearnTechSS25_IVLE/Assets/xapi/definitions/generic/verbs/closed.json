@@ -1,0 +1,14 @@
+{
+    "name": {
+        "en-US": "closed",
+        "de-DE": "schloss"
+    },
+    "description": {
+        "en-US": "An actor closed something. Could for example be the settings.",
+        "de-DE": "Ein Akteur schloss etwas. Könnten zum Beispiel die Einstellungen sein."
+    },
+    "exactMatch": [
+        "https://registry.tincanapi.com/#uri/verb/97",
+        "https://activitystrea.ms/schema/1.0/close"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "name": {
+        "en-US": "unfolded",
+        "de-DE": "klappte aus"
+    },
+    "description": {
+        "en-US": "An actor unfolded something, a menu for example.",
+        "de-DE": "Ein Akteur klappte etwas aus, zum Beispiel ein Menü."
+    }
+}

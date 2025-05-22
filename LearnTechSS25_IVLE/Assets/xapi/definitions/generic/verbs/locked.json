@@ -1,0 +1,10 @@
+{
+    "name": {
+        "en-US": "locked",
+        "de-DE": "verschloss"
+    },
+    "description": {
+        "en-US": "An actor did some action to lock up something. Could also be locked out of a progression path for example.",
+        "de-DE": "Ein Agierender verschloss etwas, z.B. einen Gegenstand. Kann zum Beispiel aber auch ausschließen von einem Weg zum voran kommen sein."
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "name": {
+        "en-US": "closed",
+        "de-DE": "schloss"
+    },
+    "description": {
+        "en-US": "Actor closed an object (i.e. forum thread)",
+        "de-DE": "Akteur hat ein Objekt (z. B. Forumsdiskussion) geschlossen"
+    },
+    "exactMatch": [
+        "https://activitystrea.ms/registry/verbs/",
+        "https://registry.tincanapi.com/#uri/verb/97"
+    ],
+    "relatedMatch": [
+    ]
+}

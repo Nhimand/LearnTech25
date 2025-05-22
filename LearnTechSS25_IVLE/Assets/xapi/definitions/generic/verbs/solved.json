@@ -1,0 +1,10 @@
+{
+    "name": {
+        "en-US": "solved",
+        "de-DE": "löste"
+    },
+    "description": {
+        "en-US": "An actor solved some task.",
+        "de-DE": "Ein Akteur löste eine Aufgabe."
+    }
+}

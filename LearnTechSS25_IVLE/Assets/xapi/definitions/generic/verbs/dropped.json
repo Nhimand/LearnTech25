@@ -1,0 +1,10 @@
+{
+    "name": {
+        "en-US": "dropped",
+        "de-DE": "ließ fallen"
+    },
+    "description": {
+        "en-US": "A actor dropped some draggable into a specific area.",
+        "de-DE": "Ein Acteur ließ einen ziehbaren Gegenstand in ein spezielles Feld fallen."
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "name": {
+        "en-US": "drew",
+        "de-DE": "malte"
+    },
+    "description": {
+        "en-US": "An actor drew something.",
+        "de-DE": "Ein Agierender malte etwas."
+    },
+    "exactMatch": [
+        "https://registry.tincanapi.com/#uri/verb/308",
+        "https://www.digital-knowledge.co.jp/tincanapi/verbs/drew"
+    ]
+}

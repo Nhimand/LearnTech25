@@ -1,0 +1,14 @@
+{
+    "name": {
+        "en-US": "opened",
+        "de-DE": "öffnete"
+    },
+    "description": {
+        "en-US": "An actor opened something. Could also be the settings for example.",
+        "de-DE": "Ein Akteur öffnete etwas. Könnten zum Beispiel auch die Einstellungen sein."
+    },
+    "exactMatch": [
+        "https://registry.tincanapi.com/#uri/verb/126",
+        "https://activitystrea.ms/schema/1.0/open"
+    ]
+}
