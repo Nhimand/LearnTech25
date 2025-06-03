@@ -1,0 +1,122 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace xAPI.Registry
+{
+    /// <summary>
+    /// Version: 2.1.3
+    /// </summary>
+    public class xAPI_Extensions : List<KeyValuePair<xAPI_Extension, object>>
+    {
+        public readonly string Context;
+        public readonly string ExtensionType;
+
+        public xAPI_Extensions(string extensionType, string context)
+        {
+            Context = context;
+            ExtensionType = extensionType;
+        }
+
+        public xAPI_Extensions() { }
+
+        public xAPI_Extensions(params xAPI_Extensions[] extensions)
+        {
+            Add(extensions);
+        }
+
+        public xAPI_Extensions Combine(xAPI_Extensions withExtensions)
+            => Combine(this, withExtensions);
+        public static xAPI_Extensions Combine(xAPI_Extensions a, xAPI_Extensions b)
+            => new xAPI_Extensions(a, b);
+
+        public xAPI_Extensions Add(xAPI_Extension key, object value)
+        {
+            if (key == null)
+                return this;
+
+            Add(new KeyValuePair<xAPI_Extension, object>(key, value));
+            return this;
+        }
+
+        public xAPI_Extensions Remove(xAPI_Extension key)
+        {
+            return Remove(key.Key);
+        }
+
+        public xAPI_Extensions Remove(string path, char pathSeparator = '.')
+        {
+            var index = FindIndex(p => p.Key.MatchesPath(path, pathSeparator));
+            base.RemoveAt(index);
+            return this;
+        }
+
+        public xAPI_Extensions Add(params xAPI_Extensions[] extensions)
+        {
+            foreach (var ext in extensions)
+                Add(ext);
+            return this;
+        }
+
+        public xAPI_Extensions Add(xAPI_Extensions extensions)
+        {
+            foreach (var pair in extensions)
+                Add(pair.Key, pair.Value);
+            return this;
+        }
+
+        public xAPI_Extensions RemoveByKey(string key)
+        {
+            var index = FindIndex(p => p.Key.Key == key);
+            base.RemoveAt(index);
+            return this;
+        }
+
+        public new xAPI_Extensions Clear()
+        {
+            base.Clear();
+            return this;
+        }
+
+        public bool ContainsPath(string path, char pathSeperator = '.')
+            => FindIndex(p => p.Key.MatchesPath(path, pathSeperator)) > -1;
+        public bool ContainsKey(string key)
+            => FindIndex(p => p.Key.Key == key) > -1;
+
+        public bool Match(string key, object value)
+            => FindIndex(p => p.Key.Key == key && p.Value == value) > -1;
+
+        public T Clone<T>() where T : xAPI_Extensions, new()
+        {
+            return (T)Activator.CreateInstance(typeof(T), this);
+        }
+        
+        // Function to format the dictionary manually
+        private string FormatDictionaryAsJson()
+        {
+            var sb = new StringBuilder();
+
+            sb.Append("{");
+        
+            var first = true;
+            foreach (var kvp in this)
+            {
+                if (!first)
+                {
+                    sb.Append(",");
+                }
+                sb.Append($"\"{kvp.Key.Key}\":\"{kvp.Value}\"");
+                first = false;
+            }
+
+            sb.Append("}");
+
+            return sb.ToString();
+        }
+
+        public override string ToString()
+        {
+            return $"[{ExtensionType}Extension items=[{FormatDictionaryAsJson()}]]";
+        }
+    }
+}

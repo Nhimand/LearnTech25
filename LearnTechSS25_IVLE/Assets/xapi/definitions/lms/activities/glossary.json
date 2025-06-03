@@ -1,0 +1,12 @@
+{
+    "name": {
+        "en-US": "Glossary",
+        "de-DE": "Glossar"
+    },
+    "description": {
+        "en-US": "A collection of definitions, resources and information.",
+        "de-DE": "Eine Sammlung verschiedener Definitionen, Ressourcen und Informationen."
+    },
+    "exactMatch": [ ],
+    "relatedMatch": [ ]
+}

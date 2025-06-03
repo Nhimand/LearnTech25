@@ -1,0 +1,17 @@
+{
+    "name": {
+        "en-US": "assigned",
+        "de-DE": "teilte zu"
+    },
+    "description": {
+        "en-US": "Actor assigned an object/task/activity to someone",
+        "de-DE": "Akteur wurde ein/e Objekt/Aufgabe/Aktivität zugeteilt"
+    },
+    "exactMatch": [
+        "https://activitystrea.ms/registry/verbs/",
+        "https://registry.tincanapi.com/#uri/verb/88"
+    ],
+    "relatedMatch": [
+        "https://registry.tincanapi.com/#uri/verb/113"
+    ]
+}

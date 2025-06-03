@@ -1,0 +1,10 @@
+{
+    "name": {
+        "en-US": "entered",
+        "de-DE": "gab ein"
+    },
+    "description": {
+        "en-US": "An actor gave some input.",
+        "de-DE": "Ein Akteur gab eine Eingabe."
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "xAPI.Registry",
+  "rootNamespace": "xAPI.Registry",
+  "references": [
+    "GUID:9b29afca86c7f314eb2f13b22ca1967d"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

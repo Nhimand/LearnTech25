@@ -1,0 +1,10 @@
+{
+    "name": {
+        "en-US": "looted",
+        "de-DE": "plünderte"
+    },
+    "description": {
+        "en-US": "An actor found some item and collected it.",
+        "de-DE": "Ein Akteur fand einen Gegenstand und sammelte ihn ein."
+    }
+}

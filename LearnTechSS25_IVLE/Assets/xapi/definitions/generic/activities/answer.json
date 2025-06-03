@@ -1,0 +1,10 @@
+{
+    "name": {
+        "en-US": "answer",
+        "de-DE": "Antwort"
+    },
+    "description": {
+        "en-US": "Response to a question given or received by the user.",
+        "de-DE": "Eine Antwort - kann auf eine Frage gegeben oder erhalten werden."
+    }
+}

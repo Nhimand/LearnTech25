@@ -1,0 +1,10 @@
+{
+    "name": {
+        "en-US": "achieved",
+        "de-DE": "erreichte"
+    },
+    "description": {
+        "en-US": "An actor achieved some goal or score.",
+        "de-DE": "Ein Akteur erreichte ein Ziel oder ein Ergebnis."
+    }
+}

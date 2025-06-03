@@ -1,0 +1,14 @@
+{
+    "name": {
+        "en-US": "completed",
+        "de-DE": "schloss ab"
+    },
+    "description": {
+        "en-US": "An actor completed some task, goal or level.",
+        "de-DE": "Ein Akteur schloss eine Aufgabe, ein Ziel oder ein Level ab."
+    },
+    "exactMatch": [
+        "https://registry.tincanapi.com/#uri/verb/98",
+        "http://activitystrea.ms/schema/1.0/complete"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "name": {
+        "en-US": "score",
+        "de-DE": "Ergebnis"
+    },
+    "description": {
+        "en-US": "Some relevant score which is tracked by the game. Can be an integer or double.",
+        "de-DE": "Ein relevantes Ergebnis welches während des Spiels aufgezeichnet wird. Kann ein Integer oder Double sein."
+    }
+}

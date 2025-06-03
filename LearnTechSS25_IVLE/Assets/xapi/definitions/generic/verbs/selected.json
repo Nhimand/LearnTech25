@@ -1,0 +1,14 @@
+{
+    "name": {
+        "en-US": "selected",
+        "de-DE": "wählte aus"
+    },
+    "description": {
+        "en-US": "An actor selected some option. This could be an answer or a level for example.",
+        "de-DE": "Ein Agierender wählte eine Option. Dies könnte eine Antwort auf eine Frage oder auch ein Level sein."
+    },
+    "exactMatch": [
+        "https://registry.tincanapi.com/#uri/verb/448",
+        "http://id.tincanapi.com/verb/selected"
+    ]
+}

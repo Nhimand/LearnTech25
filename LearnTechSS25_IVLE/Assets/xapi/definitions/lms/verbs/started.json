@@ -1,0 +1,16 @@
+{
+"name": {
+	"en-US": "started",
+	"de-DE": "startete"
+},
+"description": {
+	"en-US": "Actor started an activity",
+	"de-DE": "Akteur hat eine Aktivität gestartet"
+},
+"exactMatch": [
+	"https://activitystrea.ms/registry/verbs/",
+	"https://registry.tincanapi.com/#uri/verb/149"
+],
+"relatedMatch": [
+]
+}

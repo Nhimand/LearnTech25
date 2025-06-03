@@ -1,0 +1,14 @@
+{
+    "name": {
+        "en-US": "created",
+        "de-DE": "erstellte"
+    },
+    "description": {
+        "en-US": "An actor created something.",
+        "de-DE": "Ein Akteur erstellte etwas."
+    },
+    "exactMatch": [
+        "https://registry.tincanapi.com/#uri/verb/102",
+        "https://activitystrea.ms/schema/1.0/create"
+    ]
+}

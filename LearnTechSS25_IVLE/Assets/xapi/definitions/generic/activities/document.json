@@ -1,0 +1,14 @@
+{
+    "name": {
+        "en-US": "document",
+        "de-DE": "Dokument"
+    },
+    "description": {
+        "en-US": "An electronic document of the type produced by office productivity software such as a word processing document, spreadsheet, slides etc. Depending on the context it can also describe e.g. a document in a game.",
+        "de-DE": "Ein elektronisches Dokument, das mit einer Büro-Software erstellt wird, z. B. ein Textverarbeitungsdokument, eine Tabellenkalkulation, eine Folie usw. Abhängig vom Kontext kann es z.B. auch ein Dokument in einem Spiel beschreiben."
+    },
+    "exactMatch": [
+        "https://registry.tincanapi.com/#uri/activityType/479",
+        "http://id.tincanapi.com/activitytype/document"
+    ]
+}

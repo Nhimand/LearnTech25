@@ -1,0 +1,12 @@
+{
+    "name": {
+        "en-US": "completed"
+    },
+    "description": {
+        "en-US": "The system scan is completed to check the RFID output." 
+    },
+    "exactMatch": [
+        "https://registry.tincanapi.com/#uri/verb/98"
+    ]
+
+}

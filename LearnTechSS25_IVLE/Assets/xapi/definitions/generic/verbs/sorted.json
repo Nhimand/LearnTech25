@@ -1,0 +1,10 @@
+{
+    "name": {
+        "en-US": "sorted",
+        "de-DE": "sortierte"
+    },
+    "description": {
+        "en-US": "An actor sorted some objects.",
+        "de-DE": "Ein Akteur sortierte Objekte."
+    }
+}

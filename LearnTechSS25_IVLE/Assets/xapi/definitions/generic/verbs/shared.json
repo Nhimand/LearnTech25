@@ -1,0 +1,14 @@
+{
+    "name": {
+        "en-US": "shared",
+        "de-DE": "teilte"
+    },
+    "description": {
+        "en-US": "An actor shared an object with another actor or a group of actors.",
+        "de-DE": "Ein Agierender teilte eine Gegenstand mit einer anderen Preson oder einer Gruppe."
+    },
+    "exactMatch": [
+        "https://registry.tincanapi.com/#uri/verb/147",
+        "https://activitystrea.ms/schema/1.0/share"
+    ]
+}

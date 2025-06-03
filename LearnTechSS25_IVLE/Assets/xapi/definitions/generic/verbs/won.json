@@ -1,0 +1,14 @@
+{
+    "name": {
+        "en-US": "won",
+        "de-DE": "gewann"
+    },
+    "description": {
+        "en-US": "An actor won a game.",
+        "de-DE": "Ein Akteur gewann ein Spiel."
+    },
+    "exactMatch": [
+        "https://registry.tincanapi.com/#uri/verb/162",
+        "https://activitystrea.ms/schema/1.0/win"
+    ]
+}
