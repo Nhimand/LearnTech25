@@ -4,6 +4,7 @@
     "com.rwth.unity.omilaxr.unityxr": "1.0.1",
     "com.rwth.unity.omilaxr.xapi": "2.0.17",
     "com.rwth.unity.omilaxr.xapi4unity": "2.1.9",
+    "com.rwth.unity.opentts4unity": "https://gitlab.com/learntech-rwth/vr-projects/opentts4unity.git",
     "com.unity.collab-proxy": "2.7.1",
     "com.unity.feature.development": "1.0.2",
     "com.unity.inputsystem": "1.13.1",
