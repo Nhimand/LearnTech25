@@ -25,7 +25,7 @@ public class CheckSelected : MonoBehaviour
         isDeactivated = true;
         startPos = transform.position;
         startRot = transform.rotation;
-        randHoverDistance = Random.Range(0.5f, 1.0f);
+        randHoverDistance = Random.Range(0.2f, 0.5f);
         hoverEndPoint = startPos + new Vector3(0, randHoverDistance, 0);
         toBeDublicated = true;
         thisParent = transform.parent;
@@ -58,6 +58,7 @@ public class CheckSelected : MonoBehaviour
 
     private void Update()
     {
+        
         Vector2 curPos;
         curPos = new Vector2(transform.position.x, transform.position.z);
         if (toBeDublicated && Vector2.Distance(curPos, new Vector2(startPos.x, startPos.z)) > 0.1f)
@@ -112,7 +113,9 @@ public class CheckSelected : MonoBehaviour
             yield return null;
         }
         transform.position = startPos;
-        hoverRoutine = StartCoroutine(MoveUp(hoverGoal, duration));
+        randHoverDistance = Random.Range(0.2f, 0.5f);
+        hoverEndPoint = startPos + new Vector3(0, randHoverDistance, 0);
+        hoverRoutine = StartCoroutine(MoveUp(hoverEndPoint, duration));
     }
 
 }
