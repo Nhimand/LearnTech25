@@ -1,1 +1,13 @@
 /LearnTechSS25_IVLE/Assets/xAPI.Registry/*
+LearnTechSS25_IVLE/Assets/xAPI.Registry/Core/xAPI_Activities.cs
+LearnTechSS25_IVLE/Assets/xAPI.Registry/Core/xAPI_Activity.cs
+LearnTechSS25_IVLE/Assets/xAPI.Registry/Core/xAPI_Actor.cs
+LearnTechSS25_IVLE/Assets/xAPI.Registry/Core/xAPI_Body.cs
+LearnTechSS25_IVLE/Assets/xAPI.Registry/Core/xAPI_Context.cs
+LearnTechSS25_IVLE/Assets/xAPI.Registry/Core/xAPI_Definition.cs
+LearnTechSS25_IVLE/Assets/xAPI.Registry/Core/xAPI_Extension.cs
+LearnTechSS25_IVLE/Assets/xAPI.Registry/Core/xAPI_Extensions.cs
+LearnTechSS25_IVLE/Assets/xAPI.Registry/Core/xAPI_Verb.cs
+LearnTechSS25_IVLE/Assets/xAPI.Registry/Core/xAPI_Verbs.cs
+LearnTechSS25_IVLE/Assets/xAPI.Registry/xAPI.Registry.asmdef
+LearnTechSS25_IVLE/Assets/xAPI.Registry/xAPI.Registry.asmdef.meta
