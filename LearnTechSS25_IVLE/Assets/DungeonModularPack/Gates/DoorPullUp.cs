@@ -9,6 +9,9 @@ public class DoorPullUp : MonoBehaviour
     private Vector3 startPos;
     private Vector3 targetPos;
     private bool shouldMove = false;
+    private bool hasPlayedSound = false; // Prevent multiple plays
+
+    private AudioSource audioSource;
 
     void Start()
     {
@@ -17,20 +20,27 @@ public class DoorPullUp : MonoBehaviour
             startPos = door.transform.position;
             targetPos = startPos + Vector3.up * moveAmount;
         }
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         if (shouldMove && door != null)
         {
+            if (!hasPlayedSound && audioSource != null)
+            {
+                audioSource.Play();
+                hasPlayedSound = true;
+            }
+
             door.transform.position = Vector3.MoveTowards(door.transform.position, targetPos, speed * Time.deltaTime);
         }
     }
 
-
-    //testing
     public void OnButtonClick()
     {
+        Debug.Log("Button clicked!");
         shouldMove = true;
     }
 }
