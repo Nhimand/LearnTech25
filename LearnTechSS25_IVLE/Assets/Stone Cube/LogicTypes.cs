@@ -1,8 +1,9 @@
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public enum LogicTypes
+public enum LogicType
 {  
     Not,           
     And,          
@@ -24,8 +25,9 @@ public class LogicBlock : MonoBehaviour
 {
 
     public bool Interactables;
+    public bool Blank;
     
-    public LogicTypes type;
+    public LogicType type;
 
     public Material Not;
     public Material And;
@@ -43,7 +45,7 @@ public class LogicBlock : MonoBehaviour
     public Material Invisible;
 
 
-    private LogicTypes lastType;
+    private LogicType lastType;
     private Renderer renderer;
 
     private Rigidbody rigidbody;
@@ -65,9 +67,15 @@ public class LogicBlock : MonoBehaviour
             grabinteractable.enabled = true;
             cs.enabled = true;
         }
+        if (Blank) {
+            snap.enabled = true;
+            renderer.material = Invisible;
+        }
+
 
         lastType = type;
         UpdateMaterial();
+        
     
     }
 
@@ -84,49 +92,60 @@ public class LogicBlock : MonoBehaviour
     {
         switch (type)
         {
-            case LogicTypes.Blank:
-                snap.enabled = true;
-                renderer.material = Invisible;
-                break;
-            case LogicTypes.Not:
+            case LogicType.Not:
                 renderer.material = Not;
                 break;
-            case LogicTypes.And:
+            case LogicType.And:
                 renderer.material = And;
                 break;
-            case LogicTypes.Or:
+            case LogicType.Or:
                 renderer.material = Or;
                 break;
-            case LogicTypes.Implies:
+            case LogicType.Implies:
                 renderer.material = Implies;
                 break;
-            case LogicTypes.EqRelation:
+            case LogicType.EqRelation:
                 renderer.material = EqRelation;
                 break;
-            case LogicTypes.ConstTrue:
+            case LogicType.ConstTrue:
                 renderer.material = ConstTrue;
                 break;
-            case LogicTypes.ConstFalse:
+            case LogicType.ConstFalse:
                 renderer.material = ConstFalse;
                 break;
-            case LogicTypes.Equal:
+            case LogicType.Equal:
                 renderer.material = Equal;
                 break;        
-            case LogicTypes.NotEqual:
+            case LogicType.NotEqual:
                 renderer.material = NotEqual;
                 break;     
-            case LogicTypes.KlammerAuf:
+            case LogicType.KlammerAuf:
                 renderer.material = KlammerAuf;
                 break;            
-            case LogicTypes.KlammerZu:
+            case LogicType.KlammerZu:
                 renderer.material = KlammerZu;
                 break;            
-            case LogicTypes.E:
+            case LogicType.E:
                 renderer.material = E;
                 break;            
-            case LogicTypes.A:
+            case LogicType.A:
                 renderer.material = A;
                 break;
+        }
+    }
+    private void CheckSolution(LogicType SolutionType) {
+        if (type == SolutionType)
+        {
+            // In parentObject:
+            // set blankCubeCounter += 1 
+            // set variable for this cube to true (right block set)
+            // TODO BUG
+            // 
+        }
+        else {
+            // In parentObject:
+            // set blankCubeCounter += 1 
+            // set variable for this cube to false (right block set)
         }
     }
 }

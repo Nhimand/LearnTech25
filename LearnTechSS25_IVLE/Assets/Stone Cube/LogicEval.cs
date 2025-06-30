@@ -13,41 +13,41 @@ public class LogicEval : MonoBehaviour
         {
             switch (block.type) //push the right logic type into the stack
             {
-                case LogicTypes.ConstTrue:
+                case LogicType.ConstTrue:
                     stack.Push(true);
                     break;
 
-                case LogicTypes.ConstFalse:
+                case LogicType.ConstFalse:
                     stack.Push(false);
                     break;
 
-                case LogicTypes.Not:
+                case LogicType.Not:
                     if (stack.Count < 1) return null; //wrong inputs
                     stack.Push(!stack.Pop());
                     break;
 
-                case LogicTypes.And:
+                case LogicType.And:
                     if (stack.Count < 2) return null;
                     bool b1 = stack.Pop();
                     bool b2 = stack.Pop();
                     stack.Push(b1 && b2);
                     break;
 
-                case LogicTypes.Or:
+                case LogicType.Or:
                     if (stack.Count < 2) return null;
                     b1 = stack.Pop();
                     b2 = stack.Pop();
                     stack.Push(b1 || b2);
                     break;
 
-                case LogicTypes.Implies:
+                case LogicType.Implies:
                     if (stack.Count < 2) return null;
                     b1 = stack.Pop(); 
                     b2 = stack.Pop(); 
                     stack.Push(!b1 || b2); // a implies b == not a or b
                     break;
 
-                case LogicTypes.EqRelation:
+                case LogicType.EqRelation:
                     if (stack.Count < 2) return null;
                     b1 = stack.Pop(); 
                     b2 = stack.Pop(); 
