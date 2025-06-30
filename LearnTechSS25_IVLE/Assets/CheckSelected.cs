@@ -25,7 +25,7 @@ public class CheckSelected : MonoBehaviour
         isDeactivated = true;
         startPos = transform.position;
         startRot = transform.rotation;
-        randHoverDistance = Random.Range(0.2f, 0.5f);
+        randHoverDistance = Random.Range(0.1f, 0.2f);
         hoverEndPoint = startPos + new Vector3(0, randHoverDistance, 0);
         toBeDublicated = true;
         thisParent = transform.parent;

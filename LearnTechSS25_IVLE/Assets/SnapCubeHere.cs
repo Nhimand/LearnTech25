@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class SnapCubeHere : MonoBehaviour
 {
     public GameObject puzzleCubeParent;
@@ -9,6 +10,7 @@ public class SnapCubeHere : MonoBehaviour
     private Quaternion ownRot;
     private Outline cubeOutline;
     private bool isSet = false;
+    
     void OnEnable()
     {
         //Debug.Log("IS ENABLED");
@@ -42,6 +44,7 @@ public class SnapCubeHere : MonoBehaviour
                 {
                     puzzleCube.SetPositionAndRotation(ownPos, ownRot);
                     puzzleCube.GetComponent<Rigidbody>().isKinematic = true;
+                    LogicType cubeType = puzzleCube.GetComponent<LogicBlock>().type;
                     cubeOutline.enabled = false;
                     isSet = true;
                 }
