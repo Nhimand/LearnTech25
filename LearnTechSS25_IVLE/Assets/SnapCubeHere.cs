@@ -9,8 +9,9 @@ public class SnapCubeHere : MonoBehaviour
     private Quaternion ownRot;
     private Outline cubeOutline;
     private bool isSet = false;
-    void Start()
+    void OnEnable()
     {
+        //Debug.Log("IS ENABLED");
         cubeOutline = GetComponent<Outline>();
         ownPos = transform.position;
         ownRot = transform.rotation;
@@ -18,7 +19,6 @@ public class SnapCubeHere : MonoBehaviour
         {
             puzzleCubes.Add(child);
         }
-
     }
 
 
@@ -27,20 +27,27 @@ public class SnapCubeHere : MonoBehaviour
         cubeOutline.enabled = false;
         foreach (Transform puzzleCube in puzzleCubes) 
         {
+            
             Vector3 cubePos = puzzleCube.position;
             float distance = Vector3.Distance(ownPos, cubePos);
-            if (distance < 0.5f) 
+            if (distance < 0.5f)
             {
-                cubeOutline.enabled = true;
+                //Debug.Log("IS CLOSE");
+                if (!isSet)
+                {
+                    cubeOutline.enabled = true;
+                }
                 CheckSelected checker = puzzleCube.GetComponent<CheckSelected>();
                 if (checker.isDeactivated && !isSet)
                 {
                     puzzleCube.SetPositionAndRotation(ownPos, ownRot);
+                    puzzleCube.GetComponent<Rigidbody>().isKinematic = true;
+                    cubeOutline.enabled = false;
                     isSet = true;
                 }
                 else if (!checker.isDeactivated)
                 {
-                    isSet = false;                
+                    isSet = false;
                 }
             }
         }
