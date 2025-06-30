@@ -8,8 +8,21 @@ public class CubeRotateTrigger : MonoBehaviour
     private Quaternion startRotation;
     private Quaternion targetRotation;
     private float rotationProgress = 0f;
+    private AudioClip[] praiseClips;
 
-    // Trigger this from another script or event
+    public AudioSource VirtualAgent;
+
+
+    private void Start()
+    {
+        praiseClips = Resources.LoadAll<AudioClip>("PraiseClips");
+    
+    }
+
+    private void PlayPraiseAudio() {
+        VirtualAgent.PlayOneShot(praiseClips[Random.Range(0, praiseClips.Length)]);
+    }
+
     public void RiddleSolved()
     {
         if (isRotating) return;
@@ -20,6 +33,8 @@ public class CubeRotateTrigger : MonoBehaviour
         startRotation = transform.rotation; // Use world rotation as starting point
         // Rotate around the cube's own local Z axis
         targetRotation = startRotation * Quaternion.Euler(0f, 0f, 90f);
+
+        PlayPraiseAudio();
     }
 
     void Update()

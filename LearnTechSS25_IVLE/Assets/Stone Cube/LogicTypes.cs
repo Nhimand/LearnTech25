@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public enum LogicTypes
 {  
@@ -14,11 +16,15 @@ public enum LogicTypes
     A,
     E,
     NotEqual,
-    Equal
+    Equal,
+    Blank
 }
 
 public class LogicBlock : MonoBehaviour
 {
+
+    public bool Interactables;
+    
     public LogicTypes type;
 
     public Material Not;
@@ -33,17 +39,33 @@ public class LogicBlock : MonoBehaviour
     public Material E; 
     public Material A;
     public Material Equal;
-    public Material NotEqual; 
+    public Material NotEqual;
 
 
     private LogicTypes lastType;
     private Renderer renderer;
 
+    private Rigidbody rigidbody;
+    private XRBaseInteractable grabinteractable;
+    private CheckSelected cs;
+    private SnapCubeHere snap;
+
+
     private void Start()
     {
         renderer = GetComponent<Renderer>();
+        rigidbody = GetComponent<Rigidbody>();
+        grabinteractable = GetComponent<XRBaseInteractable>();
+        
+        if(!Interactables){
+            rigidbody.isKinematic = false;
+            grabinteractable.enabled = false;
+            cs.enabled = false;
+        }
+
         lastType = type;
         UpdateMaterial();
+    
     }
 
     private void Update()
@@ -59,6 +81,11 @@ public class LogicBlock : MonoBehaviour
     {
         switch (type)
         {
+            case LogicTypes.Blank:
+            renderer.enabled = false;
+            snap.enabled = true;
+                break;
+
             case LogicTypes.Not:
             renderer.material = Not;
                 break;
