@@ -40,6 +40,7 @@ public class LogicBlock : MonoBehaviour
     public Material A;
     public Material Equal;
     public Material NotEqual;
+    public Material Invisible;
 
 
     private LogicTypes lastType;
@@ -56,11 +57,13 @@ public class LogicBlock : MonoBehaviour
         renderer = GetComponent<Renderer>();
         rigidbody = GetComponent<Rigidbody>();
         grabinteractable = GetComponent<XRBaseInteractable>();
-        
-        if(!Interactables){
-            rigidbody.isKinematic = false;
-            grabinteractable.enabled = false;
-            cs.enabled = false;
+        cs = GetComponent<CheckSelected>();
+        snap = GetComponent<SnapCubeHere>();
+        rigidbody.isKinematic = true;
+
+        if (Interactables){
+            grabinteractable.enabled = true;
+            cs.enabled = true;
         }
 
         lastType = type;
@@ -68,26 +71,25 @@ public class LogicBlock : MonoBehaviour
     
     }
 
-    private void Update()
+    /*private void Update()
     {
         if (type != lastType)
         {
             lastType = type;
             UpdateMaterial();
         }
-    }
+    }*/
 
     private void UpdateMaterial()
     {
         switch (type)
         {
             case LogicTypes.Blank:
-            renderer.enabled = false;
-            snap.enabled = true;
+                snap.enabled = true;
+                renderer.material = Invisible;
                 break;
-
             case LogicTypes.Not:
-            renderer.material = Not;
+                renderer.material = Not;
                 break;
             case LogicTypes.And:
                 renderer.material = And;

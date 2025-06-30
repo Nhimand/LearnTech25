@@ -34,7 +34,7 @@ public class CheckSelected : MonoBehaviour
         interactable = GetComponent<XRBaseInteractable>();
         interactable.selectEntered.AddListener(OnSelectEntered);
         interactable.selectExited.AddListener(OnSelectExited);
-        //rb.isKinematic = true;
+        rb.isKinematic = true;
         hoverRoutine = StartCoroutine(MoveUp(hoverEndPoint,HoverDuration));
     }
 
@@ -53,6 +53,7 @@ public class CheckSelected : MonoBehaviour
     void OnSelectExited(SelectExitEventArgs args)
     {
         isDeactivated = true;
+        rb.isKinematic = false;
         Debug.Log("Activation");
     }
 
