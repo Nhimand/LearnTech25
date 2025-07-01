@@ -12,8 +12,7 @@ public class DoorPullUp : MonoBehaviour
     private Vector3 startPos;
     private Vector3 targetPos;
     private bool shouldMove = false;
-    private bool hasPlayedSound = false; // Prevent multiple plays
-
+    private bool hasPlayedSound = false;
     private AudioSource audioSource;
 
     void Start()
