@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DoorPullUp : MonoBehaviour
 {
     public GameObject door;
     public float moveAmount = 3f;
     public float speed = 2f;
+
+    public Button active;
 
     private Vector3 startPos;
     private Vector3 targetPos;
@@ -40,7 +43,7 @@ public class DoorPullUp : MonoBehaviour
 
     public void OnButtonClick()
     {
-        Debug.Log("Button clicked!");
+        active.interactable = false;
         shouldMove = true;
     }
 }

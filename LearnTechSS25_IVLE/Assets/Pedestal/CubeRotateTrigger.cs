@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class CubeRotateTrigger : MonoBehaviour
 {
-    public float rotationSpeed = 180f; // degrees per second
+    public float rotationSpeed = 45f; // degrees per second
 
     private bool isRotating = false;
     private Quaternion startRotation;
     private Quaternion targetRotation;
     private float rotationProgress = 0f;
     private AudioClip[] praiseClips;
+    private AudioSource rotateSound;
 
     public AudioSource VirtualAgent;
 
@@ -16,7 +17,7 @@ public class CubeRotateTrigger : MonoBehaviour
     private void Start()
     {
         praiseClips = Resources.LoadAll<AudioClip>("PraiseClips");
-    
+        rotateSound = GetComponent<AudioSource>();
     }
 
     private void PlayPraiseAudio() {
@@ -33,6 +34,7 @@ public class CubeRotateTrigger : MonoBehaviour
         // Rotate around the cube's own local Z axis
         targetRotation = startRotation * Quaternion.Euler(0f, 180f, 0f);
 
+        rotateSound.Play();
         PlayPraiseAudio();
     }
 
