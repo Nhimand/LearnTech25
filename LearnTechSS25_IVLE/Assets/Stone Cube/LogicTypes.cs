@@ -17,8 +17,7 @@ public enum LogicType
     A,
     E,
     NotEqual,
-    Equal,
-    Blank
+    Equal
 }
 
 public class LogicBlock : MonoBehaviour
@@ -26,7 +25,8 @@ public class LogicBlock : MonoBehaviour
 
     public bool Interactables;
     public bool Blank;
-    
+    public bool correct;
+
     public LogicType type;
 
     public Material Not;
@@ -140,12 +140,13 @@ public class LogicBlock : MonoBehaviour
             // set blankCubeCounter += 1 
             // set variable for this cube to true (right block set)
             // TODO BUG
-            // 
+            correct = true;
         }
         else {
             // In parentObject:
             // set blankCubeCounter += 1 
             // set variable for this cube to false (right block set)
+            correct = false;
         }
     }
 }

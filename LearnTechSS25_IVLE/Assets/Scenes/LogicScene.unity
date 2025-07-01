@@ -3178,6 +3178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Interactables: 0
   Blank: 0
+  correct: 0
   type: 1
   Not: {fileID: 2100000, guid: c45fbd6f0186ed745b3b70fd50a9ab3e, type: 2}
   And: {fileID: 2100000, guid: 8d91afa67e93441488e2a43628c63b28, type: 2}
@@ -3939,7 +3940,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1408462647}
+    m_TransformParent: {fileID: 1138473302}
     m_Modifications:
     - target: {fileID: 1531120018494835595, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: m_Enabled
@@ -3967,7 +3968,7 @@ PrefabInstance:
       objectReference: {fileID: 756192407}
     - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: Blank
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: Invisible
@@ -5507,7 +5508,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1408462647}
+    m_TransformParent: {fileID: 1138473302}
     m_Modifications:
     - target: {fileID: 1531120018494835595, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: m_Enabled
@@ -5534,8 +5535,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 756192407}
     - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
+      propertyPath: type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: Blank
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
+      propertyPath: correct
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: Invisible
@@ -6318,6 +6327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Interactables: 0
   Blank: 0
+  correct: 0
   type: 2
   Not: {fileID: 2100000, guid: c45fbd6f0186ed745b3b70fd50a9ab3e, type: 2}
   And: {fileID: 2100000, guid: 8d91afa67e93441488e2a43628c63b28, type: 2}
@@ -6344,7 +6354,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1408462647}
+    m_TransformParent: {fileID: 1138473302}
     m_Modifications:
     - target: {fileID: 1531120018494835595, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: m_Enabled
@@ -6372,7 +6382,7 @@ PrefabInstance:
       objectReference: {fileID: 756192407}
     - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: Blank
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: Invisible
@@ -10866,7 +10876,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1408462647}
+    m_TransformParent: {fileID: 1138473302}
     m_Modifications:
     - target: {fileID: 1531120018494835595, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: m_Enabled
@@ -10892,6 +10902,10 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 756192407}
+    - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
+      propertyPath: type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: Blank
       value: 1
@@ -10979,7 +10993,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 355792869}
-  - {fileID: 1408462647}
+  - {fileID: 105915633}
+  - {fileID: 605928078}
+  - {fileID: 2483632480271401654}
+  - {fileID: 2070478296}
+  - {fileID: 685749554}
   m_Father: {fileID: 1981418935}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1143782261
@@ -14183,6 +14201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Interactables: 0
   Blank: 0
+  correct: 0
   type: 6
   Not: {fileID: 2100000, guid: c45fbd6f0186ed745b3b70fd50a9ab3e, type: 2}
   And: {fileID: 2100000, guid: 8d91afa67e93441488e2a43628c63b28, type: 2}
@@ -14422,42 +14441,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 787857542793174517, guid: 1211a8a70ccbf8941b4f049e54df814a, type: 3}
   m_PrefabInstance: {fileID: 1407515899}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1408462646
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1408462647}
-  m_Layer: 0
-  m_Name: Cubes
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1408462647
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1408462646}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 105915633}
-  - {fileID: 605928078}
-  - {fileID: 2483632480271401654}
-  - {fileID: 2070478296}
-  - {fileID: 685749554}
-  m_Father: {fileID: 1138473302}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1414851121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19651,6 +19634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Interactables: 0
   Blank: 0
+  correct: 0
   type: 5
   Not: {fileID: 2100000, guid: c45fbd6f0186ed745b3b70fd50a9ab3e, type: 2}
   And: {fileID: 2100000, guid: 8d91afa67e93441488e2a43628c63b28, type: 2}
@@ -21938,7 +21922,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1408462647}
+    m_TransformParent: {fileID: 1138473302}
     m_Modifications:
     - target: {fileID: 1531120018494835595, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: m_Enabled
