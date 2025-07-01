@@ -7,6 +7,15 @@ public class LogicEval : MonoBehaviour
     public bool allCorrect = true;
     public CubeRotateTrigger cubeRotateTrigger;
     public Button active;
+    private AudioSource wrongSound;
+
+    
+    private void Start(){
+
+        wrongSound = GetComponent<AudioSource>();
+
+    }
+
 
     public void OnButtonClick(){
         CheckAllCubes();
@@ -21,6 +30,7 @@ public class LogicEval : MonoBehaviour
         LogicBlock block = cube.GetComponent<LogicBlock>();
         if (block == null)
         {
+            wrongSound.Play();
             Debug.LogWarning("Missing LB");
             allCorrect = false;
             break;
@@ -28,6 +38,7 @@ public class LogicEval : MonoBehaviour
 
         if(block.Blank){
             if (!block.correct){
+                wrongSound.Play();
                 Debug.Log("wrong");
                 allCorrect = false;
                 break; 
@@ -47,7 +58,8 @@ public class LogicEval : MonoBehaviour
         Debug.Log(" All blocks correct!");
         cubeRotateTrigger.RiddleSolved();
         // TODO Do something
-    }else{
+    }else{ 
+        wrongSound.Play();
         Debug.Log("Not all blocks correct.");
         // TODO Do something elses
     }
