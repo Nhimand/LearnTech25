@@ -3,14 +3,15 @@ using UnityEngine;
 public class LogicEval : MonoBehaviour
 {
     public Transform logicCubesParent;
-    public bool allCorrect;
+    public bool allCorrect = true;
+    public CubeRotateTrigger cubeRotateTrigger;
 
     public void OnButtonClick(){
         CheckAllCubes();
     }
 
    public void CheckAllCubes(){
-    allCorrect = true; 
+    allCorrect = true;
 
     foreach (Transform cube in logicCubesParent)
     {
@@ -18,30 +19,33 @@ public class LogicEval : MonoBehaviour
         if (block == null)
         {
             Debug.LogWarning("Missing LB");
+            allCorrect = false;
             break;
         }
 
-        if (!block.correct)
-        {
-            Debug.Log("wrong");
-            allCorrect = false;
-            break; 
+        if(block.Blank){
+            if (!block.correct){
+                Debug.Log("wrong");
+                allCorrect = false;
+                break; 
+            }else{
+                Debug.Log("right");
+            }
+        }else{
+            block.correct = true;
+
         }
-        else
-        {
-            Debug.Log("right");
-        }
+
+
     }
 
-    if (allCorrect)
-    {
+    if (allCorrect){
         Debug.Log(" All blocks correct!");
+            cubeRotateTrigger.RiddleSolved();
         // TODO Do something
-    }
-    else
-    {
+    }else{
         Debug.Log("Not all blocks correct.");
-        // TODO Do something else
+        // TODO Do something elses
     }
 }
 

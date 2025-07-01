@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CubeRotateTrigger : MonoBehaviour
 {
-    public float rotationSpeed = 90f; // degrees per second
+    public float rotationSpeed = 180f; // degrees per second
 
     private bool isRotating = false;
     private Quaternion startRotation;
@@ -23,8 +23,7 @@ public class CubeRotateTrigger : MonoBehaviour
         VirtualAgent.PlayOneShot(praiseClips[Random.Range(0, praiseClips.Length)]);
     }
 
-    public void RiddleSolved()
-    {
+    public void RiddleSolved(){
         if (isRotating) return;
 
         isRotating = true;
@@ -32,17 +31,17 @@ public class CubeRotateTrigger : MonoBehaviour
 
         startRotation = transform.rotation; // Use world rotation as starting point
         // Rotate around the cube's own local Z axis
-        targetRotation = startRotation * Quaternion.Euler(0f, 0f, 90f);
+        targetRotation = startRotation * Quaternion.Euler(0f, 180f, 0f);
 
         PlayPraiseAudio();
     }
 
-    void Update()
-    {
+    void Update(){
+
         if (isRotating)
         {
             rotationProgress += rotationSpeed * Time.deltaTime;
-            float t = Mathf.Clamp01(rotationProgress / 90f); // from 0 to 1
+            float t = Mathf.Clamp01(rotationProgress / 180f); // from 0 to 1
 
             transform.rotation = Quaternion.Slerp(startRotation, targetRotation, t);
 
