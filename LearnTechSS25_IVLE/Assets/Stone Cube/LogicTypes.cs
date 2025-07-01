@@ -125,7 +125,7 @@ public class LogicBlock : MonoBehaviour
                 break;
         }
     }
-    private void CheckSolution(LogicType SolutionType) {
+    public void CheckSolution(LogicType SolutionType) {
         if (type == SolutionType)
         {
             // In parentObject:
@@ -133,12 +133,14 @@ public class LogicBlock : MonoBehaviour
             // set variable for this cube to true (right block set)
             // TODO BUG
             correct = true;
+            Debug.Log("right ");
         }
         else {
             // In parentObject:
             // set blankCubeCounter += 1 
             // set variable for this cube to false (right block set)
             correct = false;
+            Debug.Log("wrong ");
         }
     }
 }

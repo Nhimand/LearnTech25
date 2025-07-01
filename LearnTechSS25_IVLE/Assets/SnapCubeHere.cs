@@ -44,7 +44,11 @@ public class SnapCubeHere : MonoBehaviour
                 {
                     puzzleCube.SetPositionAndRotation(ownPos, ownRot);
                     puzzleCube.GetComponent<Rigidbody>().isKinematic = true;
-                    LogicType cubeType = puzzleCube.GetComponent<LogicBlock>().type;
+                    
+                    LogicType cubeType = puzzleCube.GetComponent<LogicBlock>().type; //this cube type
+                    LogicBlock targetBlock = transform.GetComponent<LogicBlock>(); // this cube obj
+                    targetBlock.CheckSolution(cubeType); 
+
                     cubeOutline.enabled = false;
                     isSet = true;
                 }
