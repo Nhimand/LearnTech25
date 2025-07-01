@@ -44,8 +44,6 @@ public class LogicBlock : MonoBehaviour
     public Material NotEqual;
     public Material Invisible;
 
-
-    private LogicType lastType;
     private Renderer renderer;
 
     private Rigidbody rigidbody;
@@ -63,6 +61,9 @@ public class LogicBlock : MonoBehaviour
         snap = GetComponent<SnapCubeHere>();
         rigidbody.isKinematic = true;
 
+
+        UpdateMaterial();
+
         if (Interactables){
             grabinteractable.enabled = true;
             cs.enabled = true;
@@ -73,20 +74,11 @@ public class LogicBlock : MonoBehaviour
         }
 
 
-        lastType = type;
-        UpdateMaterial();
+
         
     
     }
 
-    /*private void Update()
-    {
-        if (type != lastType)
-        {
-            lastType = type;
-            UpdateMaterial();
-        }
-    }*/
 
     private void UpdateMaterial()
     {
