@@ -5,8 +5,12 @@ public class LogicEval : MonoBehaviour
     public Transform logicCubesParent;
     public bool allCorrect;
 
+    public void OnButtonClick(){
+        CheckAllCubes();
+    }
+
    public void CheckAllCubes(){
-    allCorrect = false; 
+    allCorrect = true; 
 
     foreach (Transform cube in logicCubesParent)
     {
@@ -19,7 +23,7 @@ public class LogicEval : MonoBehaviour
 
         if (!block.correct)
         {
-            Debug.Log("wrong ");
+            Debug.Log("wrong");
             allCorrect = false;
             break; 
         }
@@ -32,12 +36,12 @@ public class LogicEval : MonoBehaviour
     if (allCorrect)
     {
         Debug.Log(" All blocks correct!");
-        // Do something
+        // TODO Do something
     }
     else
     {
         Debug.Log("Not all blocks correct.");
-        // Do something else
+        // TODO Do something else
     }
 }
 
