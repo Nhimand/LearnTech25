@@ -212,6 +212,7 @@ MonoBehaviour:
   logicCubesParent: {fileID: 28924113}
   allCorrect: 1
   cubeRotateTrigger: {fileID: 1962799594}
+  active: {fileID: 593083085}
 --- !u!1001 &31999732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5600,11 +5601,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: Blank
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: correct
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: Invisible

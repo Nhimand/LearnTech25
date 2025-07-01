@@ -25,7 +25,7 @@ public class LogicBlock : MonoBehaviour
 
     public bool Interactables;
     public bool Blank;
-    public bool correct = true;
+    public bool correct;
 
     public LogicType type;
 

@@ -1,13 +1,16 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LogicEval : MonoBehaviour
 {
     public Transform logicCubesParent;
     public bool allCorrect = true;
     public CubeRotateTrigger cubeRotateTrigger;
+    public Button active;
 
     public void OnButtonClick(){
         CheckAllCubes();
+
     }
 
    public void CheckAllCubes(){
@@ -40,8 +43,9 @@ public class LogicEval : MonoBehaviour
     }
 
     if (allCorrect){
+        active.interactable = false;
         Debug.Log(" All blocks correct!");
-            cubeRotateTrigger.RiddleSolved();
+        cubeRotateTrigger.RiddleSolved();
         // TODO Do something
     }else{
         Debug.Log("Not all blocks correct.");
