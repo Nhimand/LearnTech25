@@ -32,7 +32,7 @@ public class SnapCubeHere : MonoBehaviour
             
             Vector3 cubePos = puzzleCube.position;
             float distance = Vector3.Distance(ownPos, cubePos);
-            if (distance < 0.5f)
+            if (distance < 0.2f)
             {
                 //Debug.Log("IS CLOSE");
                 if (!isSet)
