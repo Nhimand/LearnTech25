@@ -16,7 +16,6 @@ public class LogicEval : MonoBehaviour
 
     }
 
-
     public void OnButtonClick(){
         CheckAllCubes();
 

@@ -14,6 +14,7 @@ public class CubeRotateTrigger : MonoBehaviour
     public AudioSource VirtualAgent;
 
 
+
     private void Start()
     {
         praiseClips = Resources.LoadAll<AudioClip>("PraiseClips");
@@ -25,8 +26,9 @@ public class CubeRotateTrigger : MonoBehaviour
     }
 
     public void RiddleSolved(){
-        if (isRotating) return;
 
+        if (isRotating) return;
+        
         isRotating = true;
         rotationProgress = 0f;
 
