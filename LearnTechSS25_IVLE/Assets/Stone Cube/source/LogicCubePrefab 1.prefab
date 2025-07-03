@@ -106,6 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Interactables: 0
+  Blank: 0
+  correct: 0
   type: 13
   Not: {fileID: 2100000, guid: c45fbd6f0186ed745b3b70fd50a9ab3e, type: 2}
   And: {fileID: 2100000, guid: 8d91afa67e93441488e2a43628c63b28, type: 2}
@@ -308,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
+  outlineMode: 2
   outlineColor: {r: 0.98823535, g: 0.38431376, b: 0.20000002, a: 1}
   outlineWidth: 10
   precomputeOutline: 1

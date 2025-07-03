@@ -8,10 +8,10 @@ public class LogicEval : MonoBehaviour
     public CubeRotateTrigger cubeRotateTrigger;
     public Button active;
     private AudioSource wrongSound;
-    
+    public GameObject puzzleCubeParent;
 
-    
-    private void Start(){
+
+    private void OnEnable(){
 
         wrongSound = GetComponent<AudioSource>();
 
@@ -19,7 +19,6 @@ public class LogicEval : MonoBehaviour
 
     public void OnButtonClick(){
         CheckAllCubes();
-
     }
 
    public void CheckAllCubes(){

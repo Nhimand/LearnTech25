@@ -17,16 +17,14 @@ public class CubeRotateTrigger : MonoBehaviour
 
     private void Start()
     {
-        praiseClips = Resources.LoadAll<AudioClip>("PraiseClips");
+        praiseClips = Resources.LoadAll<AudioClip>("AudioFiles/PraiseClips");
+        Debug.Log(praiseClips.Length);
         rotateSound = GetComponent<AudioSource>();
     }
 
     private void PlayPraiseAudio() {
-        if(praiseClips.Length>0)
-        {
+
             VirtualAgent.PlayOneShot(praiseClips[Random.Range(0, praiseClips.Length)]);
-        }
-        
     }
 
     public void RiddleSolved(){

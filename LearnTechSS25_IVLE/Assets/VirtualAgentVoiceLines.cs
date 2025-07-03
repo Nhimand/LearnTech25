@@ -7,6 +7,7 @@ public class VirtualAgentVoiceLines : MonoBehaviour
     public AudioSource ourAgent;
     public AudioClip clip1;
     public AudioClip clip2;
+    public AudioClip clip3;
 
     public GameObject cubeToSetActive1;
     public GameObject cubeToSetActive2;
@@ -40,10 +41,13 @@ public class VirtualAgentVoiceLines : MonoBehaviour
 
     IEnumerator PlayAudioExplanation() {
 
-        ourAgent.PlayOneShot(clip1);
+        //ourAgent.PlayOneShot(clip1);
         yield return new WaitForSeconds(clip1.length + 1f);
         cubeToSetActive1.SetActive(true);
         cubeToSetActive2.SetActive(true);
-        ourAgent.PlayOneShot(clip2);
+        //ourAgent.PlayOneShot(clip2);
+        yield return new WaitForSeconds(clip2.length + 1f);
+        //ourAgent.PlayOneShot(clip3);
+        cubeToSetActive3.SetActive(true);
     }
 }
