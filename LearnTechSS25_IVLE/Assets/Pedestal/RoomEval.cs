@@ -7,8 +7,11 @@ public class RoomEvalChecker : MonoBehaviour
     public Transform taskCollection; 
     public bool roomSolved = false;
     public Button active;
+    public DoorPullUp doorPullUp; 
+
 
     private LogicEval[] logicEvals;
+    private bool clicked = false;
 
     void Start()
     {
@@ -17,44 +20,61 @@ public class RoomEvalChecker : MonoBehaviour
 
     public void ValidateAllLogicEvals()
     {
+        Debug.Log("4.1");
         foreach (LogicEval eval in logicEvals)
         {
+            Debug.Log("4.2");
             eval.CheckAllCubes();
+            Debug.Log("4.3");
         }
+        Debug.Log("4.4");
     }
 
 
     public void OnRoomCheckButton()
-    {
+    {   Debug.Log("1");
+        if (clicked)
+            return;
+Debug.Log("2");
+        clicked = true;  
+Debug.Log("3");
         if (roomSolved)
         {
+            Debug.Log("3");
             Debug.Log("Room already solved.");
             return;
         }
-
+    Debug.Log("4");
         ValidateAllLogicEvals(); 
-
+Debug.Log("5");
         if (AllTasksCorrect())
-        {
-            roomSolved = true;
+        {  
             active.interactable = false;
+            doorPullUp.OnButtonClick();
+            roomSolved = true;  
             Debug.Log("yes");
             // TODO
         }
         else
         {
+            clicked = false;
             Debug.Log("no");
             // TODO
         }
+        Debug.Log("6");
     }
 
     private bool AllTasksCorrect()
-    {
+    {Debug.Log("7");
         foreach (LogicEval eval in logicEvals)
-        {
-            if (!eval.allCorrect)
+        {   
+            Debug.Log("8");
+            if (!eval.allCorrect){
+                Debug.Log("801");
                 return false;
+            }
         }
+        Debug.Log("9");
         return true;
     }
 }

@@ -8,6 +8,7 @@ public class LogicEval : MonoBehaviour
     public CubeRotateTrigger cubeRotateTrigger;
     public Button active;
     private AudioSource wrongSound;
+    
 
     
     private void Start(){
@@ -53,9 +54,15 @@ public class LogicEval : MonoBehaviour
     }
 
     if (allCorrect){
-        active.interactable = false;
+        
         Debug.Log(" All blocks correct!");
-        cubeRotateTrigger.RiddleSolved();
+
+        if(active.interactable==true)
+        {
+            cubeRotateTrigger.RiddleSolved();
+        }
+        
+        active.interactable = false;
         // TODO Do something
     }else{ 
         wrongSound.Play();

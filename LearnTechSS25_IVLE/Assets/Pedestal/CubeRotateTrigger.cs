@@ -22,7 +22,11 @@ public class CubeRotateTrigger : MonoBehaviour
     }
 
     private void PlayPraiseAudio() {
-        VirtualAgent.PlayOneShot(praiseClips[Random.Range(0, praiseClips.Length)]);
+        if(praiseClips.Length>0)
+        {
+            VirtualAgent.PlayOneShot(praiseClips[Random.Range(0, praiseClips.Length)]);
+        }
+        
     }
 
     public void RiddleSolved(){
