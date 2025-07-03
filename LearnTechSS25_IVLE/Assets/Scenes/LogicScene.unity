@@ -9265,7 +9265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: correct
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: Invisible
@@ -20522,7 +20522,7 @@ MonoBehaviour:
   door: {fileID: 1204426562}
   moveAmount: 4
   speed: 2
-  active: {fileID: 772488655}
+  active: {fileID: 0}
 --- !u!1001 &1206418570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21058,7 +21058,7 @@ MonoBehaviour:
   door: {fileID: 1219009458}
   moveAmount: 4
   speed: 2
-  active: {fileID: 845491836}
+  active: {fileID: 0}
 --- !u!1 &1222212630
 GameObject:
   m_ObjectHideFlags: 0
@@ -26875,7 +26875,7 @@ MonoBehaviour:
   door: {fileID: 1642502662}
   moveAmount: 4
   speed: 2
-  active: {fileID: 2126671108}
+  active: {fileID: 0}
 --- !u!1001 &1651239841
 PrefabInstance:
   m_ObjectHideFlags: 0
