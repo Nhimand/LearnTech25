@@ -50,6 +50,7 @@ public class LogicBlock : MonoBehaviour
     private XRBaseInteractable grabinteractable;
     private CheckSelected cs;
     private SnapCubeHere snap;
+    
 
 
     private void Start()
@@ -73,10 +74,6 @@ public class LogicBlock : MonoBehaviour
             renderer.material = Invisible;
         }
 
-
-
-        
-    
     }
 
 

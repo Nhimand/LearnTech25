@@ -7,15 +7,20 @@ public class RoomEvalChecker : MonoBehaviour
     public Transform taskCollection; 
     public bool roomSolved = false;
     public Button active;
-    public DoorPullUp doorPullUp; 
+    public DoorPullUp doorPullUp;
+    public AudioSource audioSource;
 
 
     private LogicEval[] logicEvals;
     private bool clicked = false;
+    private AudioClip[] praiseClips;
+    private AudioClip[] failClips;
 
     void Start()
     {
         logicEvals = taskCollection.GetComponentsInChildren<LogicEval>();
+        praiseClips = Resources.LoadAll<AudioClip>("PraiseClips");
+        failClips = Resources.LoadAll<AudioClip>("FailClips");
     }
 
     public void ValidateAllLogicEvals()
@@ -44,14 +49,15 @@ Debug.Log("3");
             Debug.Log("Room already solved.");
             return;
         }
-    Debug.Log("4");
+        Debug.Log("4");
         ValidateAllLogicEvals(); 
-Debug.Log("5");
+        Debug.Log("5");
         if (AllTasksCorrect())
         {  
             active.interactable = false;
             doorPullUp.OnButtonClick();
-            roomSolved = true;  
+            roomSolved = true;
+            audioSource.PlayOneShot(praiseClips[Random.Range(0, praiseClips.Length)]);
             Debug.Log("yes");
             // TODO
         }
@@ -59,6 +65,7 @@ Debug.Log("5");
         {
             clicked = false;
             Debug.Log("no");
+            audioSource.PlayOneShot(failClips[Random.Range(0, failClips.Length)]);
             // TODO
         }
         Debug.Log("6");

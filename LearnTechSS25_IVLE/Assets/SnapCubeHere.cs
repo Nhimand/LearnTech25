@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class SnapCubeHere : MonoBehaviour
 {
-    public GameObject puzzleCubeParent;
+    private GameObject puzzleCubeParent;
     private List<Transform> puzzleCubes = new List<Transform>();
     private Vector3 ownPos;
     private Quaternion ownRot;
     private Outline cubeOutline;
     private bool isSet = false;
     
-    void OnEnable()
+    void Start()
     {
+        puzzleCubeParent = transform.parent.GetComponent<LogicEval>().puzzleCubeParent;
         //Debug.Log("IS ENABLED");
         cubeOutline = GetComponent<Outline>();
         ownPos = transform.position;
@@ -26,10 +27,8 @@ public class SnapCubeHere : MonoBehaviour
 
     void Update()
     {
-        cubeOutline.enabled = false;
         foreach (Transform puzzleCube in puzzleCubes) 
         {
-            
             Vector3 cubePos = puzzleCube.position;
             float distance = Vector3.Distance(ownPos, cubePos);
             if (distance < 0.2f)
