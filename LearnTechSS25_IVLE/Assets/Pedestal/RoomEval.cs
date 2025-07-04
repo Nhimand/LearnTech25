@@ -6,7 +6,6 @@ public class RoomEvalChecker : MonoBehaviour
 {
     public Transform taskCollection; 
     public bool roomSolved = false;
-    public Button active;
     public DoorPullUp doorPullUp;
     public AudioSource audioSource;
 
@@ -54,7 +53,6 @@ Debug.Log("3");
         Debug.Log("5");
         if (AllTasksCorrect())
         {  
-            active.interactable = false;
             doorPullUp.OnButtonClick();
             roomSolved = true;
             audioSource.PlayOneShot(praiseClips[Random.Range(0, praiseClips.Length)]);

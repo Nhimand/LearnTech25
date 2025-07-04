@@ -8,8 +8,6 @@ public class DoorPullUp : MonoBehaviour
     public float moveAmount = 3f;
     public float speed = 1f;
 
-    public Button active;
-
     private Vector3 startPos;
     private Vector3 targetPos;
     private bool shouldMove = false;
@@ -37,7 +35,6 @@ public class DoorPullUp : MonoBehaviour
 
     public void OnButtonClick()
     {
-        active.interactable = false;
         StartCoroutine(DelayedOpen(2f));
     }
 
