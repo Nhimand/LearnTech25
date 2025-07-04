@@ -349,6 +349,7 @@ MonoBehaviour:
   cubeRotateTrigger: {fileID: 1962799594}
   active: {fileID: 593083085}
   puzzleCubeParent: {fileID: 0}
+  roomEval: {fileID: 0}
 --- !u!82 &28924115
 AudioSource:
   m_ObjectHideFlags: 0
@@ -660,6 +661,7 @@ MonoBehaviour:
   cubeRotateTrigger: {fileID: 1253142056}
   active: {fileID: 1211617765}
   puzzleCubeParent: {fileID: 0}
+  roomEval: {fileID: 0}
 --- !u!1 &45604602
 GameObject:
   m_ObjectHideFlags: 0
@@ -12195,6 +12197,7 @@ MonoBehaviour:
   cubeRotateTrigger: {fileID: 470330748}
   active: {fileID: 1590173832}
   puzzleCubeParent: {fileID: 157056463}
+  roomEval: {fileID: 991998456}
 --- !u!1001 &644115349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17879,7 +17882,7 @@ MonoBehaviour:
   taskCollection: {fileID: 1572499275}
   roomSolved: 0
   active: {fileID: 787935846}
-  doorPullUp: {fileID: 1219009460}
+  doorPullUp: {fileID: 1791080161}
   audioSource: {fileID: 1798464019}
 --- !u!4 &991998457
 Transform:
@@ -19050,6 +19053,7 @@ MonoBehaviour:
   cubeRotateTrigger: {fileID: 1518558442}
   active: {fileID: 1076444801}
   puzzleCubeParent: {fileID: 0}
+  roomEval: {fileID: 0}
 --- !u!1001 &1107780856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19404,6 +19408,7 @@ MonoBehaviour:
   cubeRotateTrigger: {fileID: 224039927}
   active: {fileID: 1394045894}
   puzzleCubeParent: {fileID: 0}
+  roomEval: {fileID: 0}
 --- !u!1001 &1114342209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21240,8 +21245,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 1204426562}
-  moveAmount: 4
-  speed: 2
+  moveAmount: 3
+  speed: 1
   active: {fileID: 0}
 --- !u!1001 &1206418570
 PrefabInstance:
@@ -21776,8 +21781,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 1219009458}
-  moveAmount: 4
-  speed: 2
+  moveAmount: 3
+  speed: 1
   active: {fileID: 423637029}
 --- !u!1 &1222212630
 GameObject:
@@ -26087,6 +26092,7 @@ MonoBehaviour:
   cubeRotateTrigger: {fileID: 633019503}
   active: {fileID: 385265290}
   puzzleCubeParent: {fileID: 0}
+  roomEval: {fileID: 0}
 --- !u!1001 &1543958915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27703,8 +27709,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 1642502662}
-  moveAmount: 4
-  speed: 2
+  moveAmount: 3
+  speed: 0
   active: {fileID: 0}
 --- !u!1001 &1651239841
 PrefabInstance:
@@ -29814,8 +29820,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 1791080157}
-  moveAmount: 4
-  speed: 2
+  moveAmount: 3
+  speed: 1
   active: {fileID: 80194828}
 --- !u!82 &1791080162
 AudioSource:
@@ -32545,6 +32551,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate
       objectReference: {fileID: 0}
+    - target: {fileID: 6002724726996318614, guid: 8db31e4956b06ba46b85033053b68c24, type: 3}
+      propertyPath: m_Name
+      value: Gate 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1473653680281354892, guid: 8db31e4956b06ba46b85033053b68c24, type: 3}
@@ -34163,6 +34173,7 @@ MonoBehaviour:
   cubeRotateTrigger: {fileID: 439515315}
   active: {fileID: 423637029}
   puzzleCubeParent: {fileID: 0}
+  roomEval: {fileID: 0}
 --- !u!4 &2070478296 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5672438918466333480, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}

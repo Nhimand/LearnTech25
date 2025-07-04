@@ -9,7 +9,7 @@ public class LogicEval : MonoBehaviour
     public Button active;
     private AudioSource wrongSound;
     public GameObject puzzleCubeParent;
-
+    public RoomEvalChecker roomEval;
 
     private void OnEnable(){
 
@@ -19,6 +19,8 @@ public class LogicEval : MonoBehaviour
 
     public void OnButtonClick(){
         CheckAllCubes();
+        roomEval.OnRoomCheckButton();
+
     }
 
    public void CheckAllCubes(){

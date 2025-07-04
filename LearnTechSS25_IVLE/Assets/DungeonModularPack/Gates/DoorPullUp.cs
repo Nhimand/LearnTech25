@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class DoorPullUp : MonoBehaviour
 {
     public GameObject door;
-    public float moveAmount = 3f;
-    public float speed = 2f;
+    public float moveAmount = 4f;
+    public float speed = 0.5f;
 
     public Button active;
 
@@ -30,12 +31,6 @@ public class DoorPullUp : MonoBehaviour
     {
         if (shouldMove && door != null)
         {
-            if (!hasPlayedSound && audioSource != null)
-            {
-                audioSource.Play();
-                hasPlayedSound = true;
-            }
-
             door.transform.position = Vector3.MoveTowards(door.transform.position, targetPos, speed * Time.deltaTime);
         }
     }
@@ -43,6 +38,19 @@ public class DoorPullUp : MonoBehaviour
     public void OnButtonClick()
     {
         active.interactable = false;
+        StartCoroutine(DelayedOpen(2f));
+    }
+
+    private IEnumerator DelayedOpen(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
         shouldMove = true;
+
+        if (audioSource != null && !hasPlayedSound)
+        {
+            audioSource.Play();
+            hasPlayedSound = true;
+        }
     }
 }
