@@ -5,8 +5,8 @@ using System.Collections;
 public class DoorPullUp : MonoBehaviour
 {
     public GameObject door;
-    public float moveAmount = 4f;
-    public float speed = 0.5f;
+    public float moveAmount = 3f;
+    public float speed = 1f;
 
     public Button active;
 

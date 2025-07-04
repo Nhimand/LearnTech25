@@ -8665,7 +8665,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 756625622e584e2439a594821b701ac6, type: 3}
   m_Resource: {fileID: 8300000, guid: 756625622e584e2439a594821b701ac6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.122
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -29821,7 +29821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 1791080157}
   moveAmount: 3
-  speed: 1
+  speed: 2
   active: {fileID: 80194828}
 --- !u!82 &1791080162
 AudioSource:
@@ -29836,7 +29836,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 76876dbd263c0ab4799b9fba40f9154b, type: 3}
   m_Resource: {fileID: 8300000, guid: 76876dbd263c0ab4799b9fba40f9154b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.8
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
