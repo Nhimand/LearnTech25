@@ -39,9 +39,9 @@ public class RoomEvalChecker : MonoBehaviour
     {   Debug.Log("1");
         if (clicked)
             return;
-Debug.Log("2");
+        Debug.Log("2");
         clicked = true;  
-Debug.Log("3");
+        Debug.Log("3");
         if (roomSolved)
         {
             Debug.Log("3");

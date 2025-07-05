@@ -11,7 +11,7 @@ public class SnapCubeHere : MonoBehaviour
     private Outline cubeOutline;
     private bool isSet = false;
     
-    void Start()
+    void Awake()
     {
         puzzleCubeParent = transform.parent.GetComponent<LogicEval>().puzzleCubeParent;
         //Debug.Log("IS ENABLED");

@@ -10,20 +10,21 @@ public class LogicEval : MonoBehaviour
     private AudioSource wrongSound;
     public GameObject puzzleCubeParent;
     public RoomEvalChecker roomEval;
+    public bool lastOfRoom;
+    [HideInInspector] public bool actuallyAllCorrect = false;
+    public bool specialAppearanceTrigger = false;
+
 
     private void OnEnable(){
-
         wrongSound = GetComponent<AudioSource>();
-
     }
 
     public void OnButtonClick(){
         CheckAllCubes();
         roomEval.OnRoomCheckButton();
-
     }
 
-   public void CheckAllCubes(){
+    public void CheckAllCubes(){
     allCorrect = true;
 
     foreach (Transform cube in logicCubesParent)
@@ -50,17 +51,16 @@ public class LogicEval : MonoBehaviour
             block.correct = true;
 
         }
-
-
     }
 
     if (allCorrect){
-        
+
+        actuallyAllCorrect = true;
         Debug.Log(" All blocks correct!");
 
         if(active.interactable==true)
         {
-            cubeRotateTrigger.RiddleSolved();
+            cubeRotateTrigger.RiddleSolved(lastOfRoom);
         }
         
         active.interactable = false;

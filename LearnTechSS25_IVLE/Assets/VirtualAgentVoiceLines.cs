@@ -4,20 +4,24 @@ using System.Collections;
 
 public class VirtualAgentVoiceLines : MonoBehaviour
 {
+    public int curRoom;
+
     public AudioSource ourAgent;
     public AudioClip clip1;
     public AudioClip clip2;
     public AudioClip clip3;
+    public AudioClip clip4;
 
     public GameObject cubeToSetActive1;
     public GameObject cubeToSetActive2;
     public GameObject cubeToSetActive3;
-    public GameObject cubeToSetActive4;
-
+    
     public GameObject player;
     private float distance;
     private bool clipPlayed = false;
     private int currentClip = 1;
+
+    public GameObject thisRoomsTasks;
 
 
 
@@ -41,13 +45,20 @@ public class VirtualAgentVoiceLines : MonoBehaviour
 
     IEnumerator PlayAudioExplanation() {
 
-        //ourAgent.PlayOneShot(clip1);
+        /*ourAgent.PlayOneShot(clip1);
         yield return new WaitForSeconds(clip1.length + 1f);
         cubeToSetActive1.SetActive(true);
         cubeToSetActive2.SetActive(true);
-        //ourAgent.PlayOneShot(clip2);
+        ourAgent.PlayOneShot(clip2);
         yield return new WaitForSeconds(clip2.length + 1f);
-        //ourAgent.PlayOneShot(clip3);
         cubeToSetActive3.SetActive(true);
+        ourAgent.PlayOneShot(clip3);
+        yield return new WaitForSeconds(clip3.length + 1f);*/
+        Transform neededHere = thisRoomsTasks.transform.GetChild(0);
+        Transform task1 = neededHere.transform.Find("Task1");
+        task1.GetComponentInChildren<LogicEval>().specialAppearanceTrigger = false;
+        yield return new WaitForSeconds(4f);
+        ourAgent.PlayOneShot(clip4);
+        yield return new WaitForSeconds(clip4.length + 1f);
     }
 }
