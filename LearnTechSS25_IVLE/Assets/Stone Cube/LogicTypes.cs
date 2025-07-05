@@ -17,7 +17,9 @@ public enum LogicType
     A,
     E,
     NotEqual,
-    Equal
+    Equal,
+    X,
+    Y
 }
 
 public class LogicBlock : MonoBehaviour
@@ -43,6 +45,8 @@ public class LogicBlock : MonoBehaviour
     public Material Equal;
     public Material NotEqual;
     public Material Invisible;
+    public Material X;
+    public Material Y;
 
     private Renderer renderer;
 
@@ -119,6 +123,12 @@ public class LogicBlock : MonoBehaviour
                 break;            
             case LogicType.A:
                 renderer.material = A;
+                break;
+            case LogicType.X:
+                renderer.material = X;
+                break;
+            case LogicType.Y:
+                renderer.material = Y;
                 break;
         }
     }
