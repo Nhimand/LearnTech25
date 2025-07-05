@@ -134,7 +134,8 @@ public class LogicBlock : MonoBehaviour
             correct = true;
             Debug.Log("right");
         }
-        else{
+        else
+        {
             // In parentObject:
             // set blankCubeCounter += 1 
             // set variable for this cube to false (right block set)

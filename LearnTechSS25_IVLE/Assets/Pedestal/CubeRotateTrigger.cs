@@ -27,7 +27,7 @@ public class CubeRotateTrigger : MonoBehaviour
             VirtualAgent.PlayOneShot(praiseClips[Random.Range(0, praiseClips.Length)]);
     }
 
-    public void RiddleSolved(){
+    public void RiddleSolved(bool lastOfRoom){
 
         if (isRotating) return;
         
@@ -39,7 +39,9 @@ public class CubeRotateTrigger : MonoBehaviour
         targetRotation = startRotation * Quaternion.Euler(0f, 180f, 0f);
 
         rotateSound.Play();
-        PlayPraiseAudio();
+        if(!lastOfRoom){
+            PlayPraiseAudio();
+        }
     }
 
     void Update(){
