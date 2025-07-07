@@ -41,10 +41,9 @@ public class AppearFromFloor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("CURRENT:" + currentPuzzle);
-        Debug.Log("LAST:" + lastSolvedPuzzle);
-        if (logicEvals[lastSolvedPuzzle].actuallyAllCorrect) 
-        {
+        //Debug.Log("CURRENT:" + currentPuzzle);
+        //Debug.Log("LAST:" + lastSolvedPuzzle);
+        if (logicEvals[lastSolvedPuzzle].actuallyAllCorrect) {
             lastSolvedPuzzle += 1;
         }
         if (logicEvals[currentPuzzle].specialAppearanceTrigger)

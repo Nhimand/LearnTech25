@@ -19,7 +19,8 @@ public enum LogicType
     NotEqual,
     Equal,
     X,
-    Y
+    Y,
+    Frage
 }
 
 public class LogicBlock : MonoBehaviour
@@ -47,6 +48,7 @@ public class LogicBlock : MonoBehaviour
     public Material Invisible;
     public Material X;
     public Material Y;
+    public Material Frage;
 
     private Renderer renderer;
 
@@ -54,6 +56,7 @@ public class LogicBlock : MonoBehaviour
     private XRBaseInteractable grabinteractable;
     private CheckSelected cs;
     private SnapCubeHere snap;
+    public HelpAudio helpAudio;
     
 
 
@@ -73,9 +76,19 @@ public class LogicBlock : MonoBehaviour
             grabinteractable.enabled = true;
             cs.enabled = true;
         }
+
         if (Blank) {
+            
             snap.enabled = true;
-            renderer.material = Invisible;
+
+            if(type == LogicType.Frage)
+            {
+                renderer.material = Frage; 
+            }else
+            {
+                renderer.material = Invisible; 
+            }
+            
         }
 
     }
@@ -130,6 +143,10 @@ public class LogicBlock : MonoBehaviour
             case LogicType.Y:
                 renderer.material = Y;
                 break;
+            case LogicType.Frage:
+                renderer.material = Frage;
+                break;
+            
         }
     }
 
