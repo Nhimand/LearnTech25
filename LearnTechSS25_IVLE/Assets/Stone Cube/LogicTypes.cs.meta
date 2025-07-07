@@ -1,2 +1,28 @@
 fileFormatVersion: 2
 guid: f3e5132dd30607c4383ab5e50fcaa082
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Not: {instanceID: 0}
+  - And: {instanceID: 0}
+  - Or: {instanceID: 0}
+  - Implies: {instanceID: 0}
+  - EqRelation: {instanceID: 0}
+  - ConstTrue: {instanceID: 0}
+  - ConstFalse: {instanceID: 0}
+  - KlammerAuf: {instanceID: 0}
+  - KlammerZu: {instanceID: 0}
+  - E: {instanceID: 0}
+  - A: {instanceID: 0}
+  - Equal: {instanceID: 0}
+  - NotEqual: {instanceID: 0}
+  - Invisible: {instanceID: 0}
+  - X: {fileID: 2100000, guid: dee4182c887761648bdb4b923443d1eb, type: 2}
+  - Y: {fileID: 2100000, guid: 43b258d1f660acd4bb2148375fe0e98f, type: 2}
+  - Frage: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
