@@ -60,6 +60,7 @@ public class AppearFromFloor : MonoBehaviour
     IEnumerator Appear()
     {
         isAppearing = true;
+        yield return new WaitForSeconds(2f);
         thisStatue.PlayOneShot(stoneGrinding);
         float elapsed = 0f;
         while (elapsed < clipDuration)
