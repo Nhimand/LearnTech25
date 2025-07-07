@@ -28,7 +28,7 @@ public class LogicBlock : MonoBehaviour
 
     public bool Interactables;
     public bool Blank;
-    public bool correct;
+    public bool correct;    
 
     public LogicType type;
 
@@ -161,9 +161,9 @@ public class LogicBlock : MonoBehaviour
             correct = true;
             Debug.Log("right");
         }
-        if(type == LogicType.Frage)
+        if(SolutionType != LogicType.Frage)
         {
-            helpAudio.PlayAudioForType(type);
+            helpAudio.PlayAudioForType(SolutionType);
         }
         else
         {

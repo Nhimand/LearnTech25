@@ -4944,6 +4944,60 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4097844776799219605, guid: a179947a5e31cc0428e706c0841d3277, type: 3}
+--- !u!1 &195050085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 195050086}
+  - component: {fileID: 195050087}
+  m_Layer: 0
+  m_Name: Parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &195050086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195050085}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1274139742}
+  m_Father: {fileID: 465063412}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &195050087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195050085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976bf9345711faf4694a4e0f7c2ff8b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logicCubesParent: {fileID: 195050086}
+  allCorrect: 1
+  cubeRotateTrigger: {fileID: 470330748}
+  active: {fileID: 1590173832}
+  puzzleCubeParent: {fileID: 157056463}
+  roomEval: {fileID: 991998456}
+  lastOfRoom: 0
+  actuallyAllCorrect: 0
+  specialAppearanceTrigger: 1
 --- !u!1001 &195191958
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10477,7 +10531,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1274139742}
+  - {fileID: 195050086}
   - {fileID: 1798464020}
   - {fileID: 752441591}
   - {fileID: 157056464}
@@ -27736,7 +27790,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 465063412}
+    m_TransformParent: {fileID: 195050086}
     m_Modifications:
     - target: {fileID: 1531120018494835595, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: m_Enabled
@@ -27768,7 +27822,7 @@ PrefabInstance:
       objectReference: {fileID: 756192407}
     - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: type
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: Blank
@@ -27812,11 +27866,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5672438918466333480, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.0789995
+      value: -1.3529997
       objectReference: {fileID: 0}
     - target: {fileID: 5672438918466333480, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.044
+      value: 1.0439997
       objectReference: {fileID: 0}
     - target: {fileID: 5672438918466333480, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -27975,23 +28029,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b47ee32ea193ad41bb26214a15963a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  notClip: {fileID: 0}
-  andClip: {fileID: 0}
-  orClip: {fileID: 0}
-  impliesClip: {fileID: 0}
-  eqRelationClip: {fileID: 0}
-  constTrueClip: {fileID: 0}
-  constFalseClip: {fileID: 0}
-  equalClip: {fileID: 0}
-  notEqualClip: {fileID: 0}
-  klammerAufClip: {fileID: 0}
-  klammerZuClip: {fileID: 0}
-  eClip: {fileID: 0}
-  aClip: {fileID: 0}
-  xClip: {fileID: 0}
-  yClip: {fileID: 0}
-  frageClip: {fileID: 0}
+  audioSource: {fileID: 1274139752}
+  notClip: {fileID: 8300000, guid: 16c754fd0d50a0f4594222889c2e6ef9, type: 3}
+  andClip: {fileID: 8300000, guid: 219b9a7a483c20240a9d407f88ae15b8, type: 3}
+  orClip: {fileID: 8300000, guid: 9dc2357533197ba4f85b44e5392a5447, type: 3}
+  impliesClip: {fileID: 8300000, guid: 9dc2357533197ba4f85b44e5392a5447, type: 3}
+  eqRelationClip: {fileID: 8300000, guid: 9dc2357533197ba4f85b44e5392a5447, type: 3}
+  constTrueClip: {fileID: 8300000, guid: b279ffb0b010fa944bb53ebbd08a2a90, type: 3}
+  constFalseClip: {fileID: 8300000, guid: b279ffb0b010fa944bb53ebbd08a2a90, type: 3}
+  equalClip: {fileID: 8300000, guid: 9dc2357533197ba4f85b44e5392a5447, type: 3}
+  notEqualClip: {fileID: 8300000, guid: 9dc2357533197ba4f85b44e5392a5447, type: 3}
+  klammerAufClip: {fileID: 8300000, guid: 9dc2357533197ba4f85b44e5392a5447, type: 3}
+  klammerZuClip: {fileID: 8300000, guid: b279ffb0b010fa944bb53ebbd08a2a90, type: 3}
+  eClip: {fileID: 8300000, guid: 16c754fd0d50a0f4594222889c2e6ef9, type: 3}
+  aClip: {fileID: 8300000, guid: 16c754fd0d50a0f4594222889c2e6ef9, type: 3}
+  xClip: {fileID: 8300000, guid: b279ffb0b010fa944bb53ebbd08a2a90, type: 3}
+  yClip: {fileID: 8300000, guid: 9dc2357533197ba4f85b44e5392a5447, type: 3}
+  frageClip: {fileID: 8300000, guid: 16c754fd0d50a0f4594222889c2e6ef9, type: 3}
 --- !u!1001 &1275252801
 PrefabInstance:
   m_ObjectHideFlags: 0
