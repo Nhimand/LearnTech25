@@ -42,6 +42,10 @@ public class VirtualAgentVoiceLines : MonoBehaviour
             clipPlayed = true;
             StartCoroutine(PlayAudioExplanation());
         }
+        if (specialTasks[curTask].GetComponentInChildren<LogicEval>().readyForAppearance == true)
+        {
+            clipPlayed = false;
+        }
         if (curStep == 1 && clipPlayed == false) {
             curStep += 1;
             clipPlayed = true;
@@ -84,11 +88,13 @@ public class VirtualAgentVoiceLines : MonoBehaviour
                 yield return new WaitForSeconds(6f);
                 yield return new WaitForSeconds(PlayCurClip());
                 //TODO appear ? cube
+                AppearCurCube();
                 yield return new WaitForSeconds(PlayCurClip());
                 break;
             case (1, 2):
                 AppearCurCube();
                 AppearCurCube();
+                yield return new WaitForSeconds(PlayCurClip());
                 yield return new WaitForSeconds(PlayCurClip());
                 yield return new WaitForSeconds(PlayCurClip());
                 break;

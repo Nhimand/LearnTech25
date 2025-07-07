@@ -43,10 +43,14 @@ public class AppearFromFloor : MonoBehaviour
     {
         Debug.Log("CURRENT:" + currentPuzzle);
         Debug.Log("LAST:" + lastSolvedPuzzle);
-        if (logicEvals[lastSolvedPuzzle].actuallyAllCorrect) {
+        if (logicEvals[lastSolvedPuzzle].actuallyAllCorrect) 
+        {
             lastSolvedPuzzle += 1;
         }
-
+        if (logicEvals[currentPuzzle].specialAppearanceTrigger)
+        {
+            logicEvals[currentPuzzle].readyForAppearance = true;
+        }
         if (!logicEvals[currentPuzzle].specialAppearanceTrigger)
         { 
             if (lastSolvedPuzzle == currentPuzzle && !isAppearing)
