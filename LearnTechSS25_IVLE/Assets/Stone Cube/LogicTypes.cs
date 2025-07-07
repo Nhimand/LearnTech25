@@ -27,7 +27,7 @@ public class LogicBlock : MonoBehaviour
 
     public bool Interactables;
     public bool Blank;
-    public bool correct;
+    public bool correct;    
 
     public LogicType type;
 
@@ -143,6 +143,10 @@ public class LogicBlock : MonoBehaviour
             // TODO BUG
             correct = true;
             Debug.Log("right");
+        }
+        if(SolutionType != LogicType.Frage)
+        {
+            helpAudio.PlayAudioForType(SolutionType);
         }
         else
         {
