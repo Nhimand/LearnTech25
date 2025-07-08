@@ -17,6 +17,7 @@ public class CheckSelected : MonoBehaviour
     private Rigidbody rb;
     private Transform thisParent;
     private Coroutine hoverRoutine;
+    private System.Random rng;
 
     void OnEnable()
     {
@@ -25,7 +26,8 @@ public class CheckSelected : MonoBehaviour
         isDeactivated = true;
         startPos = transform.position;
         startRot = transform.rotation;
-        randHoverDistance = Random.Range(0.1f, 0.2f);
+        rng = new System.Random(gameObject.name.GetHashCode());
+        randHoverDistance = (float)rng.NextDouble() * 0.2f;
         hoverEndPoint = startPos + new Vector3(0, randHoverDistance, 0);
         toBeDublicated = true;
         thisParent = transform.parent;
@@ -114,7 +116,7 @@ public class CheckSelected : MonoBehaviour
             yield return null;
         }
         transform.position = startPos;
-        randHoverDistance = Random.Range(0.2f, 0.5f);
+        randHoverDistance = (float)rng.NextDouble() * 0.2f;
         hoverEndPoint = startPos + new Vector3(0, randHoverDistance, 0);
         hoverRoutine = StartCoroutine(MoveUp(hoverEndPoint, duration));
     }

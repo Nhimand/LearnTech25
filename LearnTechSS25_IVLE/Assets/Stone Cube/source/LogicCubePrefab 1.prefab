@@ -123,6 +123,8 @@ MonoBehaviour:
   Equal: {fileID: 2100000, guid: 9cd0cc05ce4a0b94cb752c67cbc1fb77, type: 2}
   NotEqual: {fileID: 2100000, guid: b3fb4dfcb6e72714d97774e2e80de570, type: 2}
   Invisible: {fileID: 2100000, guid: 3cfb10a14c6155a42a3d11142d98a64e, type: 2}
+  X: {fileID: 2100000, guid: dee4182c887761648bdb4b923443d1eb, type: 2}
+  Y: {fileID: 2100000, guid: 43b258d1f660acd4bb2148375fe0e98f, type: 2}
 --- !u!54 &1386110470206875584
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -297,7 +299,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b612a003d00b447ac2a0ca06b5bbf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzleCubeParent: {fileID: 0}
 --- !u!114 &2871106144843014960
 MonoBehaviour:
   m_ObjectHideFlags: 0

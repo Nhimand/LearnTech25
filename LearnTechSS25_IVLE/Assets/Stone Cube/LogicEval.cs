@@ -13,7 +13,7 @@ public class LogicEval : MonoBehaviour
     public bool lastOfRoom;
     [HideInInspector] public bool actuallyAllCorrect = false;
     public bool specialAppearanceTrigger = false;
-
+    [HideInInspector] public bool readyForAppearance = false;
 
     private void OnEnable(){
         wrongSound = GetComponent<AudioSource>();
