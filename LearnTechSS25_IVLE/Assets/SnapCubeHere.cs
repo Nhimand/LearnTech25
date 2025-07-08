@@ -13,12 +13,16 @@ public class SnapCubeHere : MonoBehaviour
     
     void Awake()
     {
-        puzzleCubeParent = transform.parent.GetComponent<LogicEval>().puzzleCubeParent;
-        //Debug.Log("IS ENABLED");
         cubeOutline = GetComponent<Outline>();
         ownPos = transform.position;
         ownRot = transform.rotation;
-        foreach (Transform child in puzzleCubeParent.transform) 
+        
+    }
+
+    private void OnEnable()
+    {
+        puzzleCubeParent = transform.parent.GetComponent<LogicEval>().puzzleCubeParent;
+        foreach (Transform child in puzzleCubeParent.transform)
         {
             puzzleCubes.Add(child);
         }
@@ -27,6 +31,13 @@ public class SnapCubeHere : MonoBehaviour
 
     void Update()
     {
+        foreach (Transform child in puzzleCubeParent.transform)
+        {
+            if (!puzzleCubes.Contains(child))
+            {
+                puzzleCubes.Add(child);
+            }
+        }
         foreach (Transform puzzleCube in puzzleCubes) 
         {
             Vector3 cubePos = puzzleCube.position;
