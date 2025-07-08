@@ -27,7 +27,7 @@ public class CheckSelected : MonoBehaviour
         startPos = transform.position;
         startRot = transform.rotation;
         rng = new System.Random(gameObject.name.GetHashCode());
-        randHoverDistance = (float)rng.NextDouble() * 0.2f;
+        randHoverDistance = (float)rng.NextDouble() * 0.1f;
         hoverEndPoint = startPos + new Vector3(0, randHoverDistance, 0);
         toBeDublicated = true;
         thisParent = transform.parent;
@@ -116,7 +116,7 @@ public class CheckSelected : MonoBehaviour
             yield return null;
         }
         transform.position = startPos;
-        randHoverDistance = (float)rng.NextDouble() * 0.2f;
+        randHoverDistance = (float)rng.NextDouble() * 0.1f;
         hoverEndPoint = startPos + new Vector3(0, randHoverDistance, 0);
         hoverRoutine = StartCoroutine(MoveUp(hoverEndPoint, duration));
     }

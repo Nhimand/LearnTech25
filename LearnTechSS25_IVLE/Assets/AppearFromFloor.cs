@@ -19,6 +19,8 @@ public class AppearFromFloor : MonoBehaviour
     private float clipDuration;
     private bool isAppearing = false;
 
+    [HideInInspector] public bool isDone = false;
+
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -43,11 +45,14 @@ public class AppearFromFloor : MonoBehaviour
     {
         //Debug.Log("CURRENT:" + currentPuzzle);
         //Debug.Log("LAST:" + lastSolvedPuzzle);
-        if (logicEvals[lastSolvedPuzzle].actuallyAllCorrect) {
+        if (logicEvals[lastSolvedPuzzle].actuallyAllCorrect) 
+        {
             lastSolvedPuzzle += 1;
         }
-        if (logicEvals[currentPuzzle].specialAppearanceTrigger)
+        if (logicEvals[lastSolvedPuzzle].specialAppearanceTrigger && !isDone)
         {
+            Debug.Log("SHOULD SET RN");
+            isDone = true;
             logicEvals[currentPuzzle].readyForAppearance = true;
         }
         if (!logicEvals[currentPuzzle].specialAppearanceTrigger)

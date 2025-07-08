@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class LogicEval : MonoBehaviour
 {
     public Transform logicCubesParent;
-    public bool allCorrect = true;
+    public bool allCorrect = false;
     public CubeRotateTrigger cubeRotateTrigger;
     public Button active;
     private AudioSource wrongSound;
@@ -14,14 +15,21 @@ public class LogicEval : MonoBehaviour
     [HideInInspector] public bool actuallyAllCorrect = false;
     public bool specialAppearanceTrigger = false;
     [HideInInspector] public bool readyForAppearance = false;
+    [HideInInspector] public int localMistakeCounter;
+
+
+    private bool canClick = true;
 
     private void OnEnable(){
         wrongSound = GetComponent<AudioSource>();
     }
 
     public void OnButtonClick(){
+        if (!canClick) return;
+        canClick = false;
         CheckAllCubes();
         roomEval.OnRoomCheckButton();
+        StartCoroutine(ClickCooldown());
     }
 
     public void CheckAllCubes(){
@@ -37,7 +45,6 @@ public class LogicEval : MonoBehaviour
             allCorrect = false;
             break;
         }
-
         if(block.Blank){
             if (!block.correct){
                 wrongSound.Play();
@@ -49,7 +56,6 @@ public class LogicEval : MonoBehaviour
             }
         }else{
             block.correct = true;
-
         }
     }
 
@@ -60,16 +66,23 @@ public class LogicEval : MonoBehaviour
 
         if(active.interactable==true)
         {
-            cubeRotateTrigger.RiddleSolved(lastOfRoom);
+            cubeRotateTrigger.RiddleSolved(lastOfRoom, true);
         }
         
         active.interactable = false;
         // TODO Do something
-    }else{ 
+    }else{
+        cubeRotateTrigger.RiddleSolved(lastOfRoom, false);
         wrongSound.Play();
+        localMistakeCounter += 1;
         Debug.Log("Not all blocks correct.");
         // TODO Do something elses
     }
 }
+    private IEnumerator ClickCooldown()
+    {
+        yield return new WaitForSeconds(1f); // 1-second cooldown
+        canClick = true;
+    }
 
 }
