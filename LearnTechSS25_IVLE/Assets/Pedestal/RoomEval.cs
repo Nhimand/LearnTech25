@@ -12,14 +12,14 @@ public class RoomEvalChecker : MonoBehaviour
 
     private LogicEval[] logicEvals;
     private bool clicked = false;
-    private AudioClip[] praiseClips;
-    private AudioClip[] failClips;
+    //private AudioClip[] praiseClips;
+    //private AudioClip[] failClips;
 
     void Start()
     {
         logicEvals = taskCollection.GetComponentsInChildren<LogicEval>();
-        praiseClips = Resources.LoadAll<AudioClip>("PraiseClips");
-        failClips = Resources.LoadAll<AudioClip>("FailClips");
+        //praiseClips = Resources.LoadAll<AudioClip>("PraiseClips");
+        //failClips = Resources.LoadAll<AudioClip>("FailClips");
     }
 
     public void ValidateAllLogicEvals()
@@ -28,7 +28,7 @@ public class RoomEvalChecker : MonoBehaviour
         foreach (LogicEval eval in logicEvals)
         {
             Debug.Log("4.2");
-            eval.CheckAllCubes();
+            //eval.CheckAllCubes();
             Debug.Log("4.3");
         }
         Debug.Log("4.4");
@@ -55,7 +55,6 @@ public class RoomEvalChecker : MonoBehaviour
         {  
             doorPullUp.OnButtonClick();
             roomSolved = true;
-            audioSource.PlayOneShot(praiseClips[Random.Range(0, praiseClips.Length)]);
             Debug.Log("yes");
             // TODO
         }
@@ -63,7 +62,6 @@ public class RoomEvalChecker : MonoBehaviour
         {
             clicked = false;
             Debug.Log("no");
-            audioSource.PlayOneShot(failClips[Random.Range(0, failClips.Length)]);
             // TODO
         }
         Debug.Log("6");
