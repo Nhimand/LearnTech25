@@ -57,7 +57,9 @@ public class SnapCubeHere : MonoBehaviour
                     
                     LogicType cubeType = puzzleCube.GetComponent<LogicBlock>().type; //this cube type
                     LogicBlock targetBlock = transform.GetComponent<LogicBlock>(); // this cube obj
+
                     targetBlock.CheckSolution(cubeType); 
+                    
 
                     cubeOutline.enabled = false;
                     isSet = true;
