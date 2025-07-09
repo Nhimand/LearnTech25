@@ -163,8 +163,8 @@ public class LogicBlock : MonoBehaviour
         }
         if(SolutionType != LogicType.Frage)
         {
-             HelpAudio helpAudio = GetComponent<HelpAudio>();
-            helpAudio.PlayAudioForType(SolutionType);
+            //HelpAudio helpAudio = GetComponent<HelpAudio>();
+            //helpAudio.PlayAudioForType(SolutionType);
         }
         else
         {
