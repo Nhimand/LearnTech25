@@ -4,82 +4,52 @@ public class HelpAudio : MonoBehaviour
 {
     public AudioSource audioSource;
 
-    public AudioClip notClip;
-    public AudioClip andClip;
-    public AudioClip orClip;
-    public AudioClip impliesClip;
-    public AudioClip eqRelationClip;
-    public AudioClip constTrueClip;
-    public AudioClip constFalseClip;
-    public AudioClip equalClip;
-    public AudioClip notEqualClip;
-    public AudioClip klammerAufClip;
-    public AudioClip klammerZuClip;
-    public AudioClip eClip;
-    public AudioClip aClip;
-    public AudioClip xClip;
-    public AudioClip yClip;
-    public AudioClip frageClip;
+    // Arrays of audio variants
+    public AudioClip[] andClips;
+    public AudioClip[] orClips;
+    public AudioClip[] trueClips;
+    public AudioClip[] falseClips;
+    public AudioClip[] xClips;
+    public AudioClip[] yClips;
+    public AudioClip[] equalClips;
+    public AudioClip[] notEqualClips;
 
     public void PlayAudioForType(LogicType type)
     {
-        AudioClip clipToPlay = null;
+        AudioClip[] clipsToPickFrom = null;
 
         switch (type)
         {
-            case LogicType.Not:
-                clipToPlay = notClip;
-                break;
             case LogicType.And:
-                clipToPlay = andClip;
+                clipsToPickFrom = andClips;
                 break;
             case LogicType.Or:
-                clipToPlay = orClip;
-                break;
-            case LogicType.Implies:
-                clipToPlay = impliesClip;
-                break;
-            case LogicType.EqRelation:
-                clipToPlay = eqRelationClip;
+                clipsToPickFrom = orClips;
                 break;
             case LogicType.ConstTrue:
-                clipToPlay = constTrueClip;
+                clipsToPickFrom = trueClips;
                 break;
             case LogicType.ConstFalse:
-                clipToPlay = constFalseClip;
-                break;
-            case LogicType.Equal:
-                clipToPlay = equalClip;
-                break;
-            case LogicType.NotEqual:
-                clipToPlay = notEqualClip;
-                break;
-            case LogicType.KlammerAuf:
-                clipToPlay = klammerAufClip;
-                break;
-            case LogicType.KlammerZu:
-                clipToPlay = klammerZuClip;
-                break;
-            case LogicType.E:
-                clipToPlay = eClip;
-                break;
-            case LogicType.A:
-                clipToPlay = aClip;
+                clipsToPickFrom = falseClips;
                 break;
             case LogicType.X:
-                clipToPlay = xClip;
+                clipsToPickFrom = xClips;
                 break;
             case LogicType.Y:
-                clipToPlay = yClip;
+                clipsToPickFrom = yClips;
                 break;
-            case LogicType.Frage:
-                clipToPlay = frageClip;
+            case LogicType.Equal:
+                clipsToPickFrom = equalClips;
+                break;
+            case LogicType.NotEqual:
+                clipsToPickFrom = notEqualClips;
                 break;
         }
 
-        if (clipToPlay != null && audioSource != null)
+        if (clipsToPickFrom != null && clipsToPickFrom.Length > 0)
         {
-            audioSource.clip = clipToPlay;
+            AudioClip randomClip = clipsToPickFrom[Random.Range(0, clipsToPickFrom.Length)];
+            audioSource.clip = randomClip;
             audioSource.Play();
         }
     }

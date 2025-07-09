@@ -20,7 +20,8 @@ MonoImporter:
   - Invisible: {instanceID: 0}
   - X: {fileID: 2100000, guid: dee4182c887761648bdb4b923443d1eb, type: 2}
   - Y: {fileID: 2100000, guid: 43b258d1f660acd4bb2148375fe0e98f, type: 2}
-  - Frage: {instanceID: 0}
+  - Frage: {fileID: 2100000, guid: f94e217c34f760d4a8cea94d3a133b6b, type: 2}
+  - helpAudio: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

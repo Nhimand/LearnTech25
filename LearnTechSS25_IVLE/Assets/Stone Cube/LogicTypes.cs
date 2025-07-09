@@ -56,7 +56,7 @@ public class LogicBlock : MonoBehaviour
     private XRBaseInteractable grabinteractable;
     private CheckSelected cs;
     private SnapCubeHere snap;
-    public HelpAudio helpAudio;
+    private HelpAudio helpAudio;
     
 
 
@@ -163,6 +163,7 @@ public class LogicBlock : MonoBehaviour
         }
         if(SolutionType != LogicType.Frage)
         {
+             HelpAudio helpAudio = GetComponent<HelpAudio>();
             helpAudio.PlayAudioForType(SolutionType);
         }
         else
