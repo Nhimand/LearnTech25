@@ -99,7 +99,13 @@ public class VirtualAgentVoiceLines : MonoBehaviour
                 yield return new WaitForSeconds(PlayCurClip());
                 AppearCurTask();
                 break;
+                
+            case (2f,1): //für alles bis zur nächsten special appearance
+                break;
+                
         }
+            
+
     }
 
     private float PlayCurClip() {
