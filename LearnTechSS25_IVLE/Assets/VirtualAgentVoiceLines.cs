@@ -101,8 +101,27 @@ public class VirtualAgentVoiceLines : MonoBehaviour
                 break;
                 
             case (2f,1): //für alles bis zur nächsten special appearance
+                AppearCurCube();
+                AppearCurCube();
+                AppearCurCube();
+                AppearCurCube();
+                AppearCurCube();
+                yield return new WaitForSeconds(PlayCurClip()); // or vl
+                AppearCurCube(); // or block
+                AppearCurTask();
                 break;
-                
+
+            case (2f,2): // NEG
+                AppearCurCube();
+                yield return new WaitForSeconds(PlayCurClip()); 
+                AppearCurTask();
+                break;
+
+            case (2f,3): // last task, hard
+                AppearCurCube();
+                yield return new WaitForSeconds(PlayCurClip()); 
+                AppearCurTask();
+                break;
         }
             
 
