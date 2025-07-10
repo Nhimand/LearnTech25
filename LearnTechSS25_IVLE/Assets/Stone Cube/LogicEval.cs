@@ -21,6 +21,8 @@ public class LogicEval : MonoBehaviour
     private bool canClick = true;
 
     private void OnEnable(){
+        allCorrect = false;
+        actuallyAllCorrect = false;
         wrongSound = GetComponent<AudioSource>();
     }
 

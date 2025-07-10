@@ -28,6 +28,9 @@ public class RoomEvalChecker : MonoBehaviour
         foreach (LogicEval eval in logicEvals)
         {
             Debug.Log("4.2");
+            if (!eval.actuallyAllCorrect) {
+                return;
+            }
             //eval.CheckAllCubes();
             Debug.Log("4.3");
         }
@@ -36,7 +39,8 @@ public class RoomEvalChecker : MonoBehaviour
 
 
     public void OnRoomCheckButton()
-    {   Debug.Log("1");
+    {   
+        Debug.Log("1");
         if (clicked)
             return;
         Debug.Log("2");
@@ -68,11 +72,12 @@ public class RoomEvalChecker : MonoBehaviour
     }
 
     private bool AllTasksCorrect()
-    {Debug.Log("7");
+    {
+        Debug.Log("7");
         foreach (LogicEval eval in logicEvals)
         {   
             Debug.Log("8");
-            if (!eval.allCorrect){
+            if (!eval.actuallyAllCorrect){
                 Debug.Log("801");
                 return false;
             }
