@@ -31,6 +31,7 @@ public class SnapCubeHere : MonoBehaviour
 
     void Update()
     {
+        bool blockClose = false;
         foreach (Transform child in puzzleCubeParent.transform)
         {
             if (!puzzleCubes.Contains(child))
@@ -47,6 +48,7 @@ public class SnapCubeHere : MonoBehaviour
                 //Debug.Log("IS CLOSE");
                 if (!isSet)
                 {
+                    blockClose = true;
                     cubeOutline.enabled = true;
                 }
                 CheckSelected checker = puzzleCube.GetComponent<CheckSelected>();
@@ -70,9 +72,8 @@ public class SnapCubeHere : MonoBehaviour
                 }
             }
         }
-
-        //if puzzle cube is in range do:
-        //its selected->highlight self
-        //else snap it to own position
+        if (!blockClose) {
+            cubeOutline.enabled = false;
+        }
     }
 }

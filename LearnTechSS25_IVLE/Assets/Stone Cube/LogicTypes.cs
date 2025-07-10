@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -31,6 +32,7 @@ public class LogicBlock : MonoBehaviour
     public bool correct;    
 
     public LogicType type;
+    public LogicType[] additionalTypes;
 
     public Material Not;
     public Material And;
@@ -62,6 +64,7 @@ public class LogicBlock : MonoBehaviour
 
     private void Start()
     {
+        correct = false;
         renderer = GetComponent<Renderer>();
         rigidbody = GetComponent<Rigidbody>();
         grabinteractable = GetComponent<XRBaseInteractable>();
@@ -161,6 +164,17 @@ public class LogicBlock : MonoBehaviour
             correct = true;
             Debug.Log("right");
         }
+        else if (!(additionalTypes.Length == 0))
+        {
+            foreach (LogicType adType in additionalTypes) { 
+                if(type == adType)
+                {
+                    correct = true;
+                    break;
+                }
+            }
+        }
+
         if(SolutionType != LogicType.Frage)
         {
             //HelpAudio helpAudio = GetComponent<HelpAudio>();

@@ -18091,7 +18091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logicCubesParent: {fileID: 634843697}
-  allCorrect: 1
+  allCorrect: 0
   cubeRotateTrigger: {fileID: 470330748}
   active: {fileID: 1590173832}
   puzzleCubeParent: {fileID: 157056463}
