@@ -124,6 +124,18 @@ public class VirtualAgentVoiceLines : MonoBehaviour
                 yield return new WaitForSeconds(PlayCurClip()); 
                 AppearCurTask();
                 break;
+            case (3f,1):
+                AppearCurCube();
+                AppearCurCube();
+                AppearCurCube();
+                AppearCurCube();
+                AppearCurCube();
+                AppearCurCube();
+                AppearCurCube();
+                yield return new WaitForSeconds(PlayCurClip());
+                AppearCurTask();
+                specialTasks[curTask].GetComponentInParent<AppearFromFloor>().isDone = false;
+            break;
         }
             
 
