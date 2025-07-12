@@ -7,11 +7,13 @@ public class RoomEvalChecker : MonoBehaviour
     public Transform taskCollection; 
     public bool roomSolved = false;
     public DoorPullUp doorPullUp;
+    public DoorPullUp secretDoorPullUp;
     public AudioSource audioSource;
 
 
     private LogicEval[] logicEvals;
     private bool clicked = false;
+    private int thisRoomsMistakeCounter;
     //private AudioClip[] praiseClips;
     //private AudioClip[] failClips;
 
@@ -58,6 +60,10 @@ public class RoomEvalChecker : MonoBehaviour
         if (AllTasksCorrect())
         {  
             doorPullUp.OnButtonClick();
+            if (thisRoomsMistakeCounter >= 5)
+            {
+                secretDoorPullUp.OnButtonClick();
+            }
             roomSolved = true;
             Debug.Log("yes");
             // TODO
@@ -74,14 +80,17 @@ public class RoomEvalChecker : MonoBehaviour
     private bool AllTasksCorrect()
     {
         Debug.Log("7");
+        int tempMistakes = 0;
         foreach (LogicEval eval in logicEvals)
-        {   
+        {
+            tempMistakes = tempMistakes + eval.localMistakeCounter;
             Debug.Log("8");
             if (!eval.actuallyAllCorrect){
                 Debug.Log("801");
                 return false;
             }
         }
+        thisRoomsMistakeCounter = tempMistakes;
         Debug.Log("9");
         return true;
     }

@@ -154,7 +154,7 @@ public class LogicBlock : MonoBehaviour
     }
 
 
-    public void CheckSolution(LogicType SolutionType) {
+    public bool CheckSolution(LogicType SolutionType) {
         if (type == SolutionType)
         {
             // In parentObject:
@@ -175,18 +175,24 @@ public class LogicBlock : MonoBehaviour
             }
         }
 
-        if(SolutionType != LogicType.Frage)
+        if (type == LogicType.Frage)
         {
-            //HelpAudio helpAudio = GetComponent<HelpAudio>();
-            //helpAudio.PlayAudioForType(SolutionType);
+            if (SolutionType != LogicType.Frage)
+            {
+                HelpAudio helpAudio = GetComponent<HelpAudio>();
+                helpAudio.PlayAudioForType(SolutionType);
+                return true;
+            }
+            else
+            {
+                // In parentObject:
+                // set blankCubeCounter += 1 
+                // set variable for this cube to false (right block set)
+                correct = false;
+                Debug.Log("wrong");
+                
+            }
         }
-        else
-        {
-            // In parentObject:
-            // set blankCubeCounter += 1 
-            // set variable for this cube to false (right block set)
-            correct = false;
-            Debug.Log("wrong");
-        }
+        return false;
     }
 }

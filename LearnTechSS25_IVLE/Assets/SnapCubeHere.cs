@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
+
 
 
 public class SnapCubeHere : MonoBehaviour
@@ -10,13 +12,13 @@ public class SnapCubeHere : MonoBehaviour
     private Quaternion ownRot;
     private Outline cubeOutline;
     private bool isSet = false;
-    
+
     void Awake()
     {
         cubeOutline = GetComponent<Outline>();
         ownPos = transform.position;
         ownRot = transform.rotation;
-        
+
     }
 
     private void OnEnable()
@@ -39,7 +41,7 @@ public class SnapCubeHere : MonoBehaviour
                 puzzleCubes.Add(child);
             }
         }
-        foreach (Transform puzzleCube in puzzleCubes) 
+        foreach (Transform puzzleCube in puzzleCubes)
         {
             Vector3 cubePos = puzzleCube.position;
             float distance = Vector3.Distance(ownPos, cubePos);
@@ -56,12 +58,11 @@ public class SnapCubeHere : MonoBehaviour
                 {
                     puzzleCube.SetPositionAndRotation(ownPos, ownRot);
                     puzzleCube.GetComponent<Rigidbody>().isKinematic = true;
-                    
+
                     LogicType cubeType = puzzleCube.GetComponent<LogicBlock>().type; //this cube type
                     LogicBlock targetBlock = transform.GetComponent<LogicBlock>(); // this cube obj
 
-                    targetBlock.CheckSolution(cubeType); 
-                    
+                    targetBlock.CheckSolution(cubeType);
 
                     cubeOutline.enabled = false;
                     isSet = true;
@@ -76,4 +77,5 @@ public class SnapCubeHere : MonoBehaviour
             cubeOutline.enabled = false;
         }
     }
+    
 }
