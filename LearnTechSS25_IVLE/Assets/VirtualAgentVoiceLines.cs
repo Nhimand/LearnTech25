@@ -15,7 +15,7 @@ public class VirtualAgentVoiceLines : MonoBehaviour
     public AudioClip[] audioClips;
     public GameObject[] interactableCubes;
     public GameObject[] specialTasks;
-    public GameObject secretDoor;
+    //public GameObject secretDoor;
     
     public GameObject player;
     private float distance;
@@ -24,7 +24,7 @@ public class VirtualAgentVoiceLines : MonoBehaviour
     private int curCube = 0;
     private int curTask = 0;
 
-    [HideInInspector] public int thisRoomsMistakeCounter;
+    //[HideInInspector] public int thisRoomsMistakeCounter;
     private bool isUnlocked = false;
     
 
@@ -60,9 +60,9 @@ public class VirtualAgentVoiceLines : MonoBehaviour
             clipPlayed = true;
             StartCoroutine(PlayAudioExplanation());
         }
-        if (thisRoomsMistakeCounter>=5 && !isUnlocked) {
+        /*if (thisRoomsMistakeCounter>=5 && !isUnlocked) {
             isUnlocked = true;
-        }
+        }*/
     }
 
     IEnumerator PlayAudioExplanation() {
@@ -99,10 +99,10 @@ public class VirtualAgentVoiceLines : MonoBehaviour
                 yield return new WaitForSeconds(PlayCurClip());
                 yield return new WaitForSeconds(PlayCurClip());
                 AppearCurTask();
-                if (isUnlocked) 
+                /*if (isUnlocked) 
                 {
                     OpenBranchingRoom();
-                }
+                }*/
                 break;
                 
             case (2f,1): //für alles bis zur nächsten special appearance
@@ -129,10 +129,10 @@ public class VirtualAgentVoiceLines : MonoBehaviour
                 AppearCurCube();
                 yield return new WaitForSeconds(PlayCurClip()); 
                 AppearCurTask();
-                if (isUnlocked)
+                /*if (isUnlocked)
                 {
                     OpenBranchingRoom();
-                }
+                }*/
                 break;
             case (3f,1):
                 AppearCurCube();
@@ -170,7 +170,7 @@ public class VirtualAgentVoiceLines : MonoBehaviour
         curTask += 1;
         curStep += 1;
     }
-    private void OpenBranchingRoom() {
+    /*private void OpenBranchingRoom() {
         secretDoor.GetComponent<DoorPullUp>().OnButtonClick();
-    }
+    }*/
 }

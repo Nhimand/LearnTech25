@@ -7,6 +7,7 @@ public class RoomEvalChecker : MonoBehaviour
     public Transform taskCollection; 
     public bool roomSolved = false;
     public DoorPullUp doorPullUp;
+    public DoorPullUp secretDoorPullUp;
     public AudioSource audioSource;
 
 
@@ -59,6 +60,10 @@ public class RoomEvalChecker : MonoBehaviour
         if (AllTasksCorrect())
         {  
             doorPullUp.OnButtonClick();
+            if (thisRoomsMistakeCounter >= 5)
+            {
+                secretDoorPullUp.OnButtonClick();
+            }
             roomSolved = true;
             Debug.Log("yes");
             // TODO
@@ -86,7 +91,6 @@ public class RoomEvalChecker : MonoBehaviour
             }
         }
         thisRoomsMistakeCounter = tempMistakes;
-        logicEvals[0].cubeRotateTrigger.VirtualAgent.transform.parent.GetComponent<VirtualAgentVoiceLines>().thisRoomsMistakeCounter = thisRoomsMistakeCounter;
         Debug.Log("9");
         return true;
     }
