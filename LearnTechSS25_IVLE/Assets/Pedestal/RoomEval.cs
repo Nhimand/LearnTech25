@@ -12,6 +12,7 @@ public class RoomEvalChecker : MonoBehaviour
 
     private LogicEval[] logicEvals;
     private bool clicked = false;
+    private int thisRoomsMistakeCounter;
     //private AudioClip[] praiseClips;
     //private AudioClip[] failClips;
 
@@ -74,14 +75,18 @@ public class RoomEvalChecker : MonoBehaviour
     private bool AllTasksCorrect()
     {
         Debug.Log("7");
+        int tempMistakes = 0;
         foreach (LogicEval eval in logicEvals)
-        {   
+        {
+            tempMistakes = tempMistakes + eval.localMistakeCounter;
             Debug.Log("8");
             if (!eval.actuallyAllCorrect){
                 Debug.Log("801");
                 return false;
             }
         }
+        thisRoomsMistakeCounter = tempMistakes;
+        logicEvals[0].cubeRotateTrigger.VirtualAgent.transform.parent.GetComponent<VirtualAgentVoiceLines>().thisRoomsMistakeCounter = thisRoomsMistakeCounter;
         Debug.Log("9");
         return true;
     }

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using System.Collections;
 using OmiLAXR.xAPI.Composers;
+using NUnit.Framework.Constraints;
 
 public class VirtualAgentVoiceLines : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class VirtualAgentVoiceLines : MonoBehaviour
     public AudioClip[] audioClips;
     public GameObject[] interactableCubes;
     public GameObject[] specialTasks;
+    public GameObject secretDoor;
     
     public GameObject player;
     private float distance;
@@ -22,7 +24,7 @@ public class VirtualAgentVoiceLines : MonoBehaviour
     private int curCube = 0;
     private int curTask = 0;
 
-    private int thisRoomsMistakeCounter;
+    [HideInInspector] public int thisRoomsMistakeCounter;
     private bool isUnlocked = false;
     
 
@@ -60,7 +62,6 @@ public class VirtualAgentVoiceLines : MonoBehaviour
         }
         if (thisRoomsMistakeCounter>=5 && !isUnlocked) {
             isUnlocked = true;
-            UnlockBranchingRoom();
         }
     }
 
@@ -98,6 +99,10 @@ public class VirtualAgentVoiceLines : MonoBehaviour
                 yield return new WaitForSeconds(PlayCurClip());
                 yield return new WaitForSeconds(PlayCurClip());
                 AppearCurTask();
+                if (isUnlocked) 
+                {
+                    OpenBranchingRoom();
+                }
                 break;
                 
             case (2f,1): //für alles bis zur nächsten special appearance
@@ -110,6 +115,7 @@ public class VirtualAgentVoiceLines : MonoBehaviour
                 AppearCurCube(); // or block
                 AppearCurTask();
                 specialTasks[curTask].GetComponentInParent<AppearFromFloor>().isDone = false;
+                
                 break;
 
             case (2f,2): // NEG
@@ -123,6 +129,10 @@ public class VirtualAgentVoiceLines : MonoBehaviour
                 AppearCurCube();
                 yield return new WaitForSeconds(PlayCurClip()); 
                 AppearCurTask();
+                if (isUnlocked)
+                {
+                    OpenBranchingRoom();
+                }
                 break;
             case (3f,1):
                 AppearCurCube();
@@ -160,7 +170,7 @@ public class VirtualAgentVoiceLines : MonoBehaviour
         curTask += 1;
         curStep += 1;
     }
-    private void UnlockBranchingRoom() { 
-        
+    private void OpenBranchingRoom() {
+        secretDoor.GetComponent<DoorPullUp>().OnButtonClick();
     }
 }
