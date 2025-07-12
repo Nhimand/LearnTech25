@@ -18,6 +18,7 @@ public class AppearFromFloor : MonoBehaviour
     private int lastSolvedPuzzle = 0;
     private float clipDuration;
     private bool isAppearing = false;
+    private bool allAppeared = false;
 
     [HideInInspector] public bool isDone = false;
 
@@ -43,23 +44,30 @@ public class AppearFromFloor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (currentPuzzle == ownChildren.Count)
+        {
+            allAppeared = true;
+        }
         //Debug.Log("CURRENT:" + currentPuzzle);
         //Debug.Log("LAST:" + lastSolvedPuzzle);
-        if (logicEvals[lastSolvedPuzzle].actuallyAllCorrect) 
+        if (!allAppeared == true)
         {
-            lastSolvedPuzzle += 1;
-        }
-        if (logicEvals[lastSolvedPuzzle].specialAppearanceTrigger && !isDone)
-        {
-            Debug.Log("SHOULD SET RN");
-            isDone = true;
-            logicEvals[currentPuzzle].readyForAppearance = true;
-        }
-        if (!logicEvals[currentPuzzle].specialAppearanceTrigger)
-        { 
-            if (lastSolvedPuzzle == currentPuzzle && !isAppearing)
+            if (logicEvals[lastSolvedPuzzle].actuallyAllCorrect && !(logicEvals.Length == lastSolvedPuzzle))
             {
-                StartCoroutine(Appear());
+                lastSolvedPuzzle += 1;
+            }
+            if (logicEvals[lastSolvedPuzzle].specialAppearanceTrigger && !isDone)
+            {
+                Debug.Log("SHOULD SET RN");
+                isDone = true;
+                logicEvals[currentPuzzle].readyForAppearance = true;
+            }
+            if (!logicEvals[currentPuzzle].specialAppearanceTrigger)
+            {
+                if (lastSolvedPuzzle == currentPuzzle && !isAppearing)
+                {
+                    StartCoroutine(Appear());
+                }
             }
         }
         

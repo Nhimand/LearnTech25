@@ -10654,9 +10654,7 @@ MonoBehaviour:
   - {fileID: 1728257931}
   specialTasks:
   - {fileID: 315719665}
-  secretDoor: {fileID: 0}
   player: {fileID: 419781247}
-  thisRoomsMistakeCounter: 0
 --- !u!1001 &298279314
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13988,6 +13986,7 @@ MonoBehaviour:
   taskCollection: {fileID: 539112095}
   roomSolved: 0
   doorPullUp: {fileID: 512727533}
+  secretDoorPullUp: {fileID: 0}
   audioSource: {fileID: 383597455}
 --- !u!1001 &384306842
 PrefabInstance:
@@ -15417,9 +15416,7 @@ MonoBehaviour:
   - {fileID: 1202896485}
   - {fileID: 1106096597}
   - {fileID: 1252975505}
-  secretDoor: {fileID: 531177791}
   player: {fileID: 419781247}
-  thisRoomsMistakeCounter: 0
 --- !u!1001 &441087506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17024,16 +17021,13 @@ MonoBehaviour:
   - {fileID: 1189973857}
   - {fileID: 298780743}
   - {fileID: 469840467}
-  - {fileID: 907147957}
   - {fileID: 556492160}
   - {fileID: 658521909}
   - {fileID: 714447118}
   specialTasks:
   - {fileID: 1501340128}
   - {fileID: 1209879269}
-  secretDoor: {fileID: 1255595966}
   player: {fileID: 419781247}
-  thisRoomsMistakeCounter: 0
 --- !u!4 &465063412
 Transform:
   m_ObjectHideFlags: 0
@@ -17065,7 +17059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b47ee32ea193ad41bb26214a15963a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1798464019}
   andClips: []
   orClips: []
   trueClips: []
@@ -35428,9 +35422,7 @@ MonoBehaviour:
   audioClips: []
   interactableCubes: []
   specialTasks: []
-  secretDoor: {fileID: 0}
   player: {fileID: 419781247}
-  thisRoomsMistakeCounter: 0
 --- !u!4 &885457737
 Transform:
   m_ObjectHideFlags: 0
@@ -36027,7 +36019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4806582543447150828, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4806582543447150828, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -36081,11 +36073,6 @@ PrefabInstance:
 --- !u!4 &907147956 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5672438918466333480, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
-  m_PrefabInstance: {fileID: 907147955}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &907147957 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4806582543447150828, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
   m_PrefabInstance: {fileID: 907147955}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &907996168
@@ -39403,6 +39390,7 @@ MonoBehaviour:
   taskCollection: {fileID: 1572499275}
   roomSolved: 0
   doorPullUp: {fileID: 1791080161}
+  secretDoorPullUp: {fileID: 1255595968}
   audioSource: {fileID: 1798464019}
 --- !u!4 &991998457
 Transform:
@@ -41980,11 +41968,11 @@ PrefabInstance:
       objectReference: {fileID: 756192407}
     - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: type
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: Blank
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: Frage
@@ -41992,7 +41980,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: f94e217c34f760d4a8cea94d3a133b6b, type: 2}
     - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: correct
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: Invisible
@@ -49941,7 +49929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3591644860445115680, guid: a55e8b944b49e774899ecb13192840e5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4220934241292132250, guid: a55e8b944b49e774899ecb13192840e5, type: 3}
       propertyPath: m_LocalScale.x
@@ -55349,9 +55337,7 @@ MonoBehaviour:
   interactableCubes:
   - {fileID: 136578275}
   specialTasks: []
-  secretDoor: {fileID: 512727531}
   player: {fileID: 419781247}
-  thisRoomsMistakeCounter: 0
 --- !u!1001 &1391990140
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64067,6 +64053,7 @@ MonoBehaviour:
   taskCollection: {fileID: 706592290}
   roomSolved: 0
   doorPullUp: {fileID: 1219009460}
+  secretDoorPullUp: {fileID: 0}
   audioSource: {fileID: 7904261}
 --- !u!1 &1630593942
 GameObject:
@@ -79738,7 +79725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8db31e4956b06ba46b85033053b68c24, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6002724726996318614, guid: 8db31e4956b06ba46b85033053b68c24, type: 3}
       propertyPath: m_Name
@@ -79746,7 +79733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6002724726996318614, guid: 8db31e4956b06ba46b85033053b68c24, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -84207,6 +84194,7 @@ MonoBehaviour:
   taskCollection: {fileID: 1820496404}
   roomSolved: 0
   doorPullUp: {fileID: 1202447229}
+  secretDoorPullUp: {fileID: 0}
   audioSource: {fileID: 1407019114}
 --- !u!1001 &2113802794
 PrefabInstance:

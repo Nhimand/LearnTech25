@@ -87,7 +87,6 @@ public class VirtualAgentVoiceLines : MonoBehaviour
                 //yield return new WaitForSeconds(6f);
                 //yield return new WaitForSeconds(PlayCurClip());
                 //TODO appear ? cube
-                AppearCurCube();
                 //yield return new WaitForSeconds(PlayCurClip());
 
                 specialTasks[curTask].GetComponentInParent<AppearFromFloor>().isDone = false;
@@ -95,9 +94,9 @@ public class VirtualAgentVoiceLines : MonoBehaviour
             case (1f, 2):
                 AppearCurCube();
                 AppearCurCube();
-                yield return new WaitForSeconds(PlayCurClip());
-                yield return new WaitForSeconds(PlayCurClip());
-                yield return new WaitForSeconds(PlayCurClip());
+                //yield return new WaitForSeconds(PlayCurClip());
+                //yield return new WaitForSeconds(PlayCurClip());
+                //yield return new WaitForSeconds(PlayCurClip());
                 AppearCurTask();
                 /*if (isUnlocked) 
                 {

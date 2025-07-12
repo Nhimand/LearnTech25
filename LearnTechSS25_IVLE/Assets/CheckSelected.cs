@@ -17,6 +17,7 @@ public class CheckSelected : MonoBehaviour
     private Rigidbody rb;
     private Transform thisParent;
     private Coroutine hoverRoutine;
+    private Coroutine disappearRoutine;
     private System.Random rng;
 
     void OnEnable()
@@ -69,7 +70,7 @@ public class CheckSelected : MonoBehaviour
             toBeDublicated = false;
             StartCoroutine(MyDuplicate(10.0f));
         }
-        if (!isDeactivated) 
+        if (!isDeactivated)
         {
             StopCoroutine(hoverRoutine);
         }
@@ -120,5 +121,7 @@ public class CheckSelected : MonoBehaviour
         hoverEndPoint = startPos + new Vector3(0, randHoverDistance, 0);
         hoverRoutine = StartCoroutine(MoveUp(hoverEndPoint, duration));
     }
+
+    
 
 }
