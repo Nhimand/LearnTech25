@@ -98,12 +98,15 @@ public class VirtualAgentVoiceLines : MonoBehaviour
                 //yield return new WaitForSeconds(PlayCurClip());
                 //yield return new WaitForSeconds(PlayCurClip());
                 AppearCurTask();
-                /*if (isUnlocked) 
-                {
-                    OpenBranchingRoom();
-                }*/
                 break;
-                
+
+            case (1.5f, 1):
+                AppearCurCube();
+                yield return new WaitForSeconds(PlayCurClip());
+                AppearCurCube();
+                AppearCurCube();
+                break;
+
             case (2f,1): //für alles bis zur nächsten special appearance
                 AppearCurCube();
                 AppearCurCube();
@@ -114,7 +117,6 @@ public class VirtualAgentVoiceLines : MonoBehaviour
                 AppearCurCube(); // or block
                 AppearCurTask();
                 specialTasks[curTask].GetComponentInParent<AppearFromFloor>().isDone = false;
-                
                 break;
 
             case (2f,2): // NEG
@@ -124,14 +126,18 @@ public class VirtualAgentVoiceLines : MonoBehaviour
                 specialTasks[curTask].GetComponentInParent<AppearFromFloor>().isDone = false;
                 break;
 
+            case (2.5f, 1):
+                AppearCurCube();
+                yield return new WaitForSeconds(PlayCurClip());
+                AppearCurCube();
+                AppearCurCube();
+                break;
+
             case (2f,3): // last task, hard
                 AppearCurCube();
                 yield return new WaitForSeconds(PlayCurClip()); 
                 AppearCurTask();
-                /*if (isUnlocked)
-                {
-                    OpenBranchingRoom();
-                }*/
+                
                 break;
             case (3f,1):
                 AppearCurCube();
