@@ -62,7 +62,12 @@ public class RoomEvalChecker : MonoBehaviour
             doorPullUp.OnButtonClick();
             if (thisRoomsMistakeCounter >= 5)
             {
+                //play voiceline v2
                 secretDoorPullUp.OnButtonClick();
+            }
+            else 
+            { 
+                //play voiceline v1
             }
             roomSolved = true;
             Debug.Log("yes");
