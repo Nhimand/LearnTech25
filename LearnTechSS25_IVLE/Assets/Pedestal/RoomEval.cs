@@ -8,17 +8,21 @@ public class RoomEvalChecker : MonoBehaviour
     public bool roomSolved = false;
     public DoorPullUp doorPullUp;
     public DoorPullUp secretDoorPullUp;
-    public AudioSource audioSource;
-
+    public GameObject virtualAgent;
 
     private LogicEval[] logicEvals;
     private bool clicked = false;
     private int thisRoomsMistakeCounter;
-    //private AudioClip[] praiseClips;
-    //private AudioClip[] failClips;
+    private AudioSource virtualAgentSource = null;
+
+    public AudioClip withoutBranch;
+    public AudioClip withBranch;
 
     void Start()
     {
+        if (virtualAgent != null) {
+            virtualAgentSource = virtualAgent.GetComponentInChildren<AudioSource>();
+        }
         logicEvals = taskCollection.GetComponentsInChildren<LogicEval>();
         //praiseClips = Resources.LoadAll<AudioClip>("PraiseClips");
         //failClips = Resources.LoadAll<AudioClip>("FailClips");
@@ -58,16 +62,18 @@ public class RoomEvalChecker : MonoBehaviour
         ValidateAllLogicEvals(); 
         Debug.Log("5");
         if (AllTasksCorrect())
-        {  
+        {
             doorPullUp.OnButtonClick();
-            if (thisRoomsMistakeCounter >= 5)
-            {
-                //play voiceline v2
-                secretDoorPullUp.OnButtonClick();
-            }
-            else 
-            { 
-                //play voiceline v1
+            if (virtualAgentSource != null) { 
+                if (thisRoomsMistakeCounter >= 5)
+                {
+                    virtualAgentSource.PlayOneShot(withBranch);
+                    secretDoorPullUp.OnButtonClick();
+                }
+                else
+                {
+                    virtualAgentSource.PlayOneShot(withoutBranch);
+                }
             }
             roomSolved = true;
             Debug.Log("yes");
