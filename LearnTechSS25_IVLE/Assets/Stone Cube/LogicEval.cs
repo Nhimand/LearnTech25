@@ -36,7 +36,10 @@ public class LogicEval : MonoBehaviour
 
     public void CheckAllCubes(){
     allCorrect = true;
-
+    if (roomEval.virtualAgentSource != null)
+    {
+            cubeRotateTrigger.virtualAgent = roomEval.virtualAgentSource;
+    }
     foreach (Transform cube in logicCubesParent)
     {
         LogicBlock block = cube.GetComponent<LogicBlock>();
@@ -62,7 +65,7 @@ public class LogicEval : MonoBehaviour
     }
 
     if (allCorrect){
-
+        
         actuallyAllCorrect = true;
         Debug.Log(" All blocks correct!");
 

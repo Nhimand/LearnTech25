@@ -15,7 +15,7 @@ public class RoomEvalChecker : MonoBehaviour
     private LogicEval[] logicEvals;
     private bool clicked = false;
     private int thisRoomsMistakeCounter;
-    private AudioSource virtualAgentSource = null;
+    [HideInInspector] public AudioSource virtualAgentSource = null;
 
     public AudioClip withoutBranch;
     public AudioClip withBranch;
@@ -72,7 +72,7 @@ public class RoomEvalChecker : MonoBehaviour
                     virtualAgentSource.PlayOneShot(withBranch);
                     secretDoorPullUp.OnButtonClick();
                 }
-                else
+                else if (withBranch != null)
                 {
                     virtualAgentSource.PlayOneShot(withoutBranch);
                 }

@@ -42,7 +42,7 @@ public class VirtualAgentVoiceLines : MonoBehaviour
         curTuple = (curRoom, curStep);
         distance = Vector3.Distance(player.transform.position, transform.position);
         if (distance < 5.0 && curStep == 1 && clipPlayed == false) {
-            Debug.Log("should speak");
+            //Debug.Log("should speak");
             clipPlayed = true;
             StartCoroutine(PlayAudioExplanation());
         }
@@ -51,18 +51,16 @@ public class VirtualAgentVoiceLines : MonoBehaviour
             if (specialTasks[curTask].GetComponentInChildren<LogicEval>().readyForAppearance == true)
             {
                 specialTasks[curTask].GetComponentInChildren<LogicEval>().readyForAppearance = false;
-                Debug.Log("set to false");
+                //Debug.Log("set to false");
                 clipPlayed = false;
             }
         }
         if (curStep == 2 && clipPlayed == false) {
-            Debug.Log("should speak 2");
+            //Debug.Log("should speak 2");
             clipPlayed = true;
             StartCoroutine(PlayAudioExplanation());
         }
-        /*if (thisRoomsMistakeCounter>=5 && !isUnlocked) {
-            isUnlocked = true;
-        }*/
+        
     }
 
     IEnumerator PlayAudioExplanation() {
@@ -126,6 +124,12 @@ public class VirtualAgentVoiceLines : MonoBehaviour
                 specialTasks[curTask].GetComponentInParent<AppearFromFloor>().isDone = false;
                 break;
 
+            case (2f,3): // last task, hard
+                AppearCurCube();
+                yield return new WaitForSeconds(PlayCurClip()); 
+                AppearCurTask();
+                break;
+
             case (2.5f, 1):
                 AppearCurCube();
                 yield return new WaitForSeconds(PlayCurClip());
@@ -133,12 +137,6 @@ public class VirtualAgentVoiceLines : MonoBehaviour
                 AppearCurCube();
                 break;
 
-            case (2f,3): // last task, hard
-                AppearCurCube();
-                yield return new WaitForSeconds(PlayCurClip()); 
-                AppearCurTask();
-                
-                break;
             case (3f,1):
                 AppearCurCube();
                 AppearCurCube();
@@ -149,7 +147,7 @@ public class VirtualAgentVoiceLines : MonoBehaviour
                 AppearCurCube();
                 yield return new WaitForSeconds(PlayCurClip());
                 AppearCurTask();
-                specialTasks[curTask].GetComponentInParent<AppearFromFloor>().isDone = false;
+                //specialTasks[curTask].GetComponentInParent<AppearFromFloor>().isDone = false;
             break;
         }
             
@@ -157,6 +155,7 @@ public class VirtualAgentVoiceLines : MonoBehaviour
     }
 
     private float PlayCurClip() {
+        Debug.Log("Voiceline triggered");
         //Plays the audio clip passed, returns the length of the clip as float +1 sec
         ourAgent.PlayOneShot(audioClips[curClip]);
         float res = audioClips[curClip].length + 1f;

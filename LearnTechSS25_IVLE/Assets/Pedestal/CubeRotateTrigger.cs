@@ -13,28 +13,30 @@ public class CubeRotateTrigger : MonoBehaviour
     private AudioClip[] praiseClips;
     private AudioClip[] failClips;
     private AudioSource rotateSound;
-
-    public AudioSource VirtualAgent;
-
+    public AudioSource virtualAgent;
+    
 
 
     private void Start()
     {
         failClips = Resources.LoadAll<AudioClip>("AudioFiles/FailClips");
         praiseClips = Resources.LoadAll<AudioClip>("AudioFiles/PraiseClips");
-        Debug.Log(praiseClips.Length);
         rotateSound = GetComponent<AudioSource>();
+        //Debug.Log("Praise clips loaded: " + praiseClips.Length);
+        
     }
 
     private void PlayPraiseAudio() 
     {
-        VirtualAgent.PlayOneShot(praiseClips[Random.Range(0, praiseClips.Length)]);
+        Debug.Log("HERE");
+        Debug.Log("Praise clips loaded: " + praiseClips.Length);
+        virtualAgent.PlayOneShot(praiseClips[Random.Range(0, praiseClips.Length)]);
     }
     private IEnumerator PlayFailAudio()
     {
         yield return new WaitForSeconds(1f);
         AudioClip curFailClip = failClips[Random.Range(0, failClips.Length)];
-        VirtualAgent.PlayOneShot(curFailClip);
+        virtualAgent.PlayOneShot(curFailClip);
         yield return new WaitForSeconds(curFailClip.length);
         isPlayingNegClip = false;
     }
@@ -56,6 +58,7 @@ public class CubeRotateTrigger : MonoBehaviour
             rotateSound.Play();
             if (!lastOfRoom)
             {
+                Debug.Log("In if right before playpraise");
                 PlayPraiseAudio();
             }
         }

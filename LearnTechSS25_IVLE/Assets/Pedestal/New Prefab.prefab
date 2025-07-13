@@ -868,9 +868,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -4305115349481258228, guid: a2fd8ce3cb3cd3f438185a5b1505a797, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6962158128026399926}
-    - targetCorrespondingSourceObject: {fileID: -4305115349481258228, guid: a2fd8ce3cb3cd3f438185a5b1505a797, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 5560489250004014398}
   m_SourcePrefab: {fileID: 100100000, guid: a2fd8ce3cb3cd3f438185a5b1505a797, type: 3}
 --- !u!4 &1167770041619530198 stripped
@@ -883,19 +880,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -4305115349481258228, guid: a2fd8ce3cb3cd3f438185a5b1505a797, type: 3}
   m_PrefabInstance: {fileID: 6114515413951583545}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6962158128026399926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1196329370502469173}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d20bd392cbe87e41a09faeaa2868246, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 90
 --- !u!114 &5560489250004014398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -909,6 +893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 90
+  virtualAgent: {fileID: 0}
 --- !u!4 &6003762443363381970 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2fd8ce3cb3cd3f438185a5b1505a797, type: 3}

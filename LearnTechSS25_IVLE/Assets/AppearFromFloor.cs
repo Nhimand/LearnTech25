@@ -58,7 +58,7 @@ public class AppearFromFloor : MonoBehaviour
             }
             if (logicEvals[lastSolvedPuzzle].specialAppearanceTrigger && !isDone)
             {
-                Debug.Log("SHOULD SET RN");
+                //Debug.Log("SHOULD SET RN");
                 isDone = true;
                 logicEvals[currentPuzzle].readyForAppearance = true;
             }
@@ -75,6 +75,7 @@ public class AppearFromFloor : MonoBehaviour
 
     IEnumerator Appear()
     {
+        Debug.Log("Task Appearing");
         isAppearing = true;
         yield return new WaitForSeconds(2f);
         thisStatue.PlayOneShot(stoneGrinding);

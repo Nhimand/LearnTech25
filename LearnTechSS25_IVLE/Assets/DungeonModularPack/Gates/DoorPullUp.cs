@@ -20,9 +20,10 @@ public class DoorPullUp : MonoBehaviour
         {
             startPos = door.transform.position;
             targetPos = startPos + Vector3.up * moveAmount;
+            audioSource = GetComponent<AudioSource>();
         }
 
-        audioSource = GetComponent<AudioSource>();
+        
     }
 
     void Update()
@@ -46,6 +47,7 @@ public class DoorPullUp : MonoBehaviour
 
         if (audioSource != null && !hasPlayedSound)
         {
+            Debug.Log("Door Sound");
             audioSource.Play();
             hasPlayedSound = true;
         }
