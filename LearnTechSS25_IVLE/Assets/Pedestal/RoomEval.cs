@@ -9,6 +9,8 @@ public class RoomEvalChecker : MonoBehaviour
     public DoorPullUp doorPullUp;
     public DoorPullUp secretDoorPullUp;
     public GameObject virtualAgent;
+    public bool lastRoom = false;
+    public ScoreCalculator scoreCalc;
 
     private LogicEval[] logicEvals;
     private bool clicked = false;
@@ -74,6 +76,9 @@ public class RoomEvalChecker : MonoBehaviour
                 {
                     virtualAgentSource.PlayOneShot(withoutBranch);
                 }
+            }
+            if (lastRoom) {
+                scoreCalc.CountPoints();
             }
             roomSolved = true;
             Debug.Log("yes");
