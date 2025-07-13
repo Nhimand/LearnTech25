@@ -67,12 +67,12 @@ public class RoomEvalChecker : MonoBehaviour
         {
             doorPullUp.OnButtonClick();
             if (virtualAgentSource != null) { 
-                if (thisRoomsMistakeCounter >= 5)
+                if (thisRoomsMistakeCounter >= 5 && withBranch != null)
                 {
                     virtualAgentSource.PlayOneShot(withBranch);
                     secretDoorPullUp.OnButtonClick();
                 }
-                else if (withBranch != null)
+                else if (withoutBranch != null)
                 {
                     virtualAgentSource.PlayOneShot(withoutBranch);
                 }

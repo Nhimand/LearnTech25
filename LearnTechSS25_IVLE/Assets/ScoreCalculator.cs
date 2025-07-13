@@ -13,21 +13,17 @@ public class ScoreCalculator : MonoBehaviour
     private int finalScore;
     private int globalMistakeCounter;
     private int timeBonus = 100000;
-    private TextMeshProUGUI scoreBoard;
+    private TextMeshPro scoreBoard;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        scoreBoard = GetComponentInChildren<TextMeshProUGUI>();
+        scoreBoard = GetComponentInChildren<TextMeshPro>();
         scoreBoard.enabled = false;
         startTime = Time.time;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    
     public void CountPoints()
     {
         float endTime = Time.time;

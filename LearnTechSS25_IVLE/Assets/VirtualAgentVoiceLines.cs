@@ -60,7 +60,13 @@ public class VirtualAgentVoiceLines : MonoBehaviour
             clipPlayed = true;
             StartCoroutine(PlayAudioExplanation());
         }
-        
+        if (curStep == 3 && clipPlayed == false)
+        {
+            //Debug.Log("should speak 2");
+            clipPlayed = true;
+            StartCoroutine(PlayAudioExplanation());
+        }
+
     }
 
     IEnumerator PlayAudioExplanation() {
@@ -149,6 +155,10 @@ public class VirtualAgentVoiceLines : MonoBehaviour
                 AppearCurTask();
                 //specialTasks[curTask].GetComponentInParent<AppearFromFloor>().isDone = false;
             break;
+
+            case (4f, 1):
+                yield return new WaitForSeconds(PlayCurClip());
+                break;
         }
             
 

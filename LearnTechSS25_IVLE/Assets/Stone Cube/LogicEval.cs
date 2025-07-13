@@ -5,7 +5,7 @@ using System.Collections;
 public class LogicEval : MonoBehaviour
 {
     public Transform logicCubesParent;
-    public bool allCorrect = false;
+    public bool allCorrect = true;
     public CubeRotateTrigger cubeRotateTrigger;
     public Button active;
     private AudioSource wrongSound;
