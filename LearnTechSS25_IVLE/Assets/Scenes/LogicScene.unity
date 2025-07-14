@@ -24153,6 +24153,7 @@ GameObject:
   - component: {fileID: 465063412}
   - component: {fileID: 465063411}
   - component: {fileID: 465063413}
+  - component: {fileID: 465063414}
   m_Layer: 0
   m_Name: VirtualAgentRoom1
   m_TagString: Untagged
@@ -24249,6 +24250,19 @@ MonoBehaviour:
   notEqualClips:
   - {fileID: 8300000, guid: 1de563721cd7bf945a26d007b1a8d5d9, type: 3}
   - {fileID: 8300000, guid: bf147f7ddf29c334eb4aa9e9e400f34d, type: 3}
+--- !u!114 &465063414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465063410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef80215abdf5c784cb7bc84c0c85fc09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  andObject: {fileID: 1663529839}
 --- !u!1 &465278777
 GameObject:
   m_ObjectHideFlags: 0
@@ -33213,7 +33227,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 618181410}
-  - component: {fileID: 618181409}
   m_Layer: 0
   m_Name: Animations
   m_TagString: Untagged
@@ -33221,19 +33234,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &618181409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 618181408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef80215abdf5c784cb7bc84c0c85fc09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  andObject: {fileID: 1663529839}
 --- !u!4 &618181410
 Transform:
   m_ObjectHideFlags: 0
@@ -91808,7 +91808,7 @@ Transform:
   m_GameObject: {fileID: 1663529839}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.443, z: 0}
+  m_LocalPosition: {x: -0.283, y: -0.443, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
