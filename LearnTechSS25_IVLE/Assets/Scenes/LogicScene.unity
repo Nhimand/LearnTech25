@@ -28435,7 +28435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: type
-      value: 5
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4792230779119854792, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: Interactables
@@ -94072,7 +94072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1663529840
 Animator:
   serializedVersion: 7
