@@ -48530,15 +48530,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2871106144843014960, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: outlineColor.b
-      value: 0.227451
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2871106144843014960, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: outlineColor.g
-      value: 0.82745105
+      value: 0.38431373
       objectReference: {fileID: 0}
     - target: {fileID: 2871106144843014960, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: outlineColor.r
-      value: 0.9686275
+      value: 0.9882353
       objectReference: {fileID: 0}
     - target: {fileID: 4036772039800124497, guid: fd8b5fe0b79607947958a1f73fc4bd7e, type: 3}
       propertyPath: puzzleCubeParent
