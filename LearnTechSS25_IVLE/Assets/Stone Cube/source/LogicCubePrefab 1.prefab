@@ -109,6 +109,7 @@ MonoBehaviour:
   Blank: 0
   correct: 0
   type: 13
+  additionalTypes: 
   Not: {fileID: 2100000, guid: c45fbd6f0186ed745b3b70fd50a9ab3e, type: 2}
   And: {fileID: 2100000, guid: 8d91afa67e93441488e2a43628c63b28, type: 2}
   Or: {fileID: 2100000, guid: d923c9b4b8096d046af71943ced64c4a, type: 2}
@@ -125,6 +126,7 @@ MonoBehaviour:
   Invisible: {fileID: 2100000, guid: 3cfb10a14c6155a42a3d11142d98a64e, type: 2}
   X: {fileID: 2100000, guid: dee4182c887761648bdb4b923443d1eb, type: 2}
   Y: {fileID: 2100000, guid: 43b258d1f660acd4bb2148375fe0e98f, type: 2}
+  Frage: {fileID: 0}
 --- !u!54 &1386110470206875584
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -313,7 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 2
   outlineColor: {r: 0.98823535, g: 0.38431376, b: 0.20000002, a: 1}
-  outlineWidth: 10
+  outlineWidth: 5
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4493585093827132993, guid: 269c1a94bb1bfd043856c702d4d5f499, type: 3}
