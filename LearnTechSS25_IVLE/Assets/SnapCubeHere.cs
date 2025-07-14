@@ -14,6 +14,7 @@ public class SnapCubeHere : MonoBehaviour
     private bool isSet = false;
     private Color originalOutlineColor;
     private Color isCloseOutlineColor;
+    private bool outlineEnabled = true;
 
     void Awake()
     {
@@ -62,6 +63,9 @@ public class SnapCubeHere : MonoBehaviour
                     blockClose = true;
                     cubeOutline.OutlineColor = isCloseOutlineColor;
                 }
+                else {
+                    cubeOutline.enabled = false;
+                }
                 CheckSelected checker = puzzleCube.GetComponent<CheckSelected>();
                 if (checker.isDeactivated && !isSet)
                 {
@@ -74,15 +78,23 @@ public class SnapCubeHere : MonoBehaviour
                     targetBlock.CheckSolution(cubeType);
 
                     cubeOutline.OutlineColor = originalOutlineColor;
+                    cubeOutline.enabled = false;
                     isSet = true;
                 }
                 else if (!checker.isDeactivated)
                 {
+                    outlineEnabled = false;
                     isSet = false;
                 }
             }
         }
         if (!blockClose) {
+            if (!(gameObject.GetComponent<LogicBlock>().type == LogicType.Frage || outlineEnabled))
+            {
+                Debug.Log("SET TRUE");
+                cubeOutline.enabled = true;
+                outlineEnabled = true;
+            }
             cubeOutline.OutlineColor = originalOutlineColor;
         }
     }
