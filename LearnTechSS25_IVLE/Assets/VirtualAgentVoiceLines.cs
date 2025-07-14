@@ -24,6 +24,9 @@ public class VirtualAgentVoiceLines : MonoBehaviour
     private int curCube = 0;
     private int curTask = 0;
 
+    //animation stuff
+    private AnimationHelper animHelper;
+
     //[HideInInspector] public int thisRoomsMistakeCounter;
     private bool isUnlocked = false;
     
@@ -33,7 +36,7 @@ public class VirtualAgentVoiceLines : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        
+        animHelper = GetComponent<AnimationHelper>();
     }
 
     // Update is called once per frame
@@ -91,6 +94,7 @@ public class VirtualAgentVoiceLines : MonoBehaviour
                 AppearCurCube();
                 //yield return new WaitForSeconds(PlayCurClip());
                 AppearCurCube();
+                animHelper.PlayAnd();
                 //yield return new WaitForSeconds(PlayCurClip()-3f);
                 AppearCurTask();
                 //yield return new WaitForSeconds(6f);
