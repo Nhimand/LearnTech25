@@ -23274,7 +23274,7 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: 90b1b0b22f7c4964b96727ffca4e661e, type: 3}
   - {fileID: 8300000, guid: 49b4dd162b8066047b7ea6edd0895a6c, type: 3}
-  - {fileID: 8300000, guid: ad393d6b64be0d543b78a13f0fd53782, type: 3}
+  - {fileID: 8300000, guid: 5df8d5158a392bc40bbdedab850be48a, type: 3}
   - {fileID: 8300000, guid: c6b33608997be8343bf1415f437b675b, type: 3}
   interactableCubes:
   - {fileID: 996568968}
