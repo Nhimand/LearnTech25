@@ -12,17 +12,26 @@ public class SnapCubeHere : MonoBehaviour
     private Quaternion ownRot;
     private Outline cubeOutline;
     private bool isSet = false;
+    private Color originalOutlineColor;
+    private Color isCloseOutlineColor;
 
     void Awake()
     {
         cubeOutline = GetComponent<Outline>();
+        originalOutlineColor = cubeOutline.OutlineColor;
         ownPos = transform.position;
         ownRot = transform.rotation;
-
+        if (ColorUtility.TryParseHtmlString("#F7D33A", out Color parsedColor))
+        {
+            isCloseOutlineColor = parsedColor;
+        }
     }
 
     private void OnEnable()
     {
+        if (!(gameObject.GetComponent<LogicBlock>().type==LogicType.Frage)) { 
+            cubeOutline.enabled = true;
+        }
         puzzleCubeParent = transform.parent.GetComponent<LogicEval>().puzzleCubeParent;
         foreach (Transform child in puzzleCubeParent.transform)
         {
@@ -51,7 +60,7 @@ public class SnapCubeHere : MonoBehaviour
                 if (!isSet)
                 {
                     blockClose = true;
-                    cubeOutline.enabled = true;
+                    cubeOutline.OutlineColor = isCloseOutlineColor;
                 }
                 CheckSelected checker = puzzleCube.GetComponent<CheckSelected>();
                 if (checker.isDeactivated && !isSet)
@@ -64,7 +73,7 @@ public class SnapCubeHere : MonoBehaviour
 
                     targetBlock.CheckSolution(cubeType);
 
-                    cubeOutline.enabled = false;
+                    cubeOutline.OutlineColor = originalOutlineColor;
                     isSet = true;
                 }
                 else if (!checker.isDeactivated)
@@ -74,7 +83,7 @@ public class SnapCubeHere : MonoBehaviour
             }
         }
         if (!blockClose) {
-            cubeOutline.enabled = false;
+            cubeOutline.OutlineColor = originalOutlineColor;
         }
     }
     

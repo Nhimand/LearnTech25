@@ -78,6 +78,11 @@ public class VirtualAgentVoiceLines : MonoBehaviour
 
         switch (curTuple)
         {
+            case (0f, 1):
+                yield return new WaitForSeconds(PlayCurClip());
+                GetComponentInChildren<DoorPullUp>().OnButtonClick();
+                break;
+
             case (1f, 1):
                 //yield return new WaitForSeconds(PlayCurClip());
                 AppearCurCube();
