@@ -3,7 +3,12 @@ guid: 506880ad21e8d9c4584c0e458fd4b116
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 17008_stone_jaguar_v2Mat
+    second: {fileID: 2100000, guid: 7618c86626a243e478d0af123869b92c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
