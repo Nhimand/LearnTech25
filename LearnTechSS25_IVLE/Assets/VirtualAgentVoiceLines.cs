@@ -87,28 +87,29 @@ public class VirtualAgentVoiceLines : MonoBehaviour
                 break;
 
             case (1f, 1):
-                //yield return new WaitForSeconds(PlayCurClip());
+                yield return new WaitForSeconds(PlayCurClip());
                 AppearCurCube();
                 AppearCurCube();
-                //yield return new WaitForSeconds(PlayCurClip());
-                AppearCurCube();
-                //yield return new WaitForSeconds(PlayCurClip());
+                yield return new WaitForSeconds(PlayCurClip());
                 AppearCurCube();
                 animHelper.PlayAnd();
-                //yield return new WaitForSeconds(PlayCurClip()-3f);
+                yield return new WaitForSeconds(PlayCurClip());
+                AppearCurCube();
+                yield return new WaitForSeconds(PlayCurClip()-3f);
                 AppearCurTask();
-                //yield return new WaitForSeconds(6f);
-                //yield return new WaitForSeconds(PlayCurClip());
-                //TODO appear ? cube
-                //yield return new WaitForSeconds(PlayCurClip());
+                yield return new WaitForSeconds(6f);
+                yield return new WaitForSeconds(PlayCurClip());
+                yield return new WaitForSeconds(PlayCurClip());
 
                 specialTasks[curTask].GetComponentInParent<AppearFromFloor>().isDone = false;
                 break;
+
             case (1f, 2):
+                yield return new WaitForSeconds(1.5f);
                 AppearCurCube();
                 AppearCurCube();
-                //yield return new WaitForSeconds(PlayCurClip());
-                //yield return new WaitForSeconds(PlayCurClip());
+                yield return new WaitForSeconds(PlayCurClip());
+                yield return new WaitForSeconds(PlayCurClip());
                 //yield return new WaitForSeconds(PlayCurClip());
                 AppearCurTask();
                 break;
@@ -122,25 +123,28 @@ public class VirtualAgentVoiceLines : MonoBehaviour
 
             case (2f,1): //für alles bis zur nächsten special appearance
                 AppearCurCube();
-                AppearCurCube();
-                AppearCurCube();
-                AppearCurCube();
-                AppearCurCube();
                 yield return new WaitForSeconds(PlayCurClip()); // or vl
+                AppearCurCube();
+                AppearCurCube();
+                AppearCurCube();
+                AppearCurCube();
+                AppearCurCube();
                 AppearCurCube(); // or block
                 AppearCurTask();
                 specialTasks[curTask].GetComponentInParent<AppearFromFloor>().isDone = false;
                 break;
 
             case (2f,2): // NEG
+                yield return new WaitForSeconds(1.5f);
                 AppearCurCube();
-                yield return new WaitForSeconds(PlayCurClip()); 
+                yield return new WaitForSeconds(PlayCurClip());
+                yield return new WaitForSeconds(PlayCurClip());
                 AppearCurTask();
                 specialTasks[curTask].GetComponentInParent<AppearFromFloor>().isDone = false;
                 break;
 
             case (2f,3): // last task, hard
-                AppearCurCube();
+                yield return new WaitForSeconds(1.5f);
                 yield return new WaitForSeconds(PlayCurClip()); 
                 AppearCurTask();
                 break;
@@ -153,6 +157,7 @@ public class VirtualAgentVoiceLines : MonoBehaviour
                 break;
 
             case (3f,1):
+                AppearCurCube();
                 AppearCurCube();
                 AppearCurCube();
                 AppearCurCube();
